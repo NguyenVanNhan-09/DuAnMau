@@ -77,7 +77,7 @@
                                 </a>
                             </li>
                             <li class="right__item">
-                                <a href="#" class="right__item-link">
+                                <a href="../admin.html" class="right__item-link">
                                     <i class="right__item-icon ti-check-box"></i>
                                     <div class="right__item-text">Quyền hạn</div>
                                 </a>
