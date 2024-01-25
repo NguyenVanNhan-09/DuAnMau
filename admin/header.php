@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách loại hàng</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/style/base.css">
-    <link rel="stylesheet" href="./assets/style/admin.css">
+    <link rel="stylesheet" href="../assets/style/base.css">
+    <link rel="stylesheet" href="../assets/style/admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../assets/themify-icons/themify-icons.css">
 </head>
 <body>
     <div class="main">
@@ -22,45 +22,51 @@
                         <ul class="sidebar__list">
                             <!-- logo -->
                             <li class="sidebar__logo">
-                                <a class="sidebar__logo-link" href="admin.html">
+                                <a class="sidebar__logo-link" href="index.php">
                                     <span class="sidebar__logo-img"></span>
                                     <span class="sidebar__logo-text">X - Shop</span>
                                 </a>
                             </li>
                             <!-- end logo -->
                             <li class="sidebar__item">
-                                <a href="admin.html" class="sidebar__item-link">
+                                <a href="index.php" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Trang chủ</span>
                                 </a>
                             </li>
                             <li class="sidebar__item">
-                                <a href="danhSachloaihang.html" class="sidebar__item-link">
+                                <a href="index.php?act=add_dm" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Danh mục</span>
                                 </a>
                             </li>
                             <li class="sidebar__item">
-                                <a href="#" class="sidebar__item-link">
+                                <a href="index.php?act=add_sp" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Hàng hoá</span>
                                 </a>
                             </li>
                             <li class="sidebar__item">
-                                <a href="#" class="sidebar__item-link">
+                                <a href="index.php?act=list_kh" class="sidebar__item-link">
+                                    <span class="sidebar__item-icon ti-home"></span>
+                                    <span class="sidebar__item-text">Khánh hàng</span>
+                                </a>
+                            </li>
+                            <li class="sidebar__item">
+                                <a href="index.php?act=list_bl" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Bình luận</span>
                                 </a>
                             </li>
                             <li class="sidebar__item">
-                                <a href="#" class="sidebar__item-link">
+                                <a href="index.php?act=list_tk" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Thống kê</span>
                                 </a>
                             </li>
                             <div class="sidebar__bottom">
                                 <li class="sidebar__item">
-                                    <a href="#" class="sidebar__item-link">
+                                    <a href="index.html" class="sidebar__item-link">
                                         <span class="sidebar__item-icon ti-home"></span>
                                         <span class="sidebar__item-text">Người dùng</span>
                                     </a>
@@ -69,54 +75,26 @@
                         </ul>
                     </div>
                 </div>
+                
                 <!-- container -->
                 <div class="gird__82 admin">
                     <!-- header -->
                     <div class="admin__header">
-                        <div class="header__content">
-                            <div class="header__topic">Danh sách loại hàng</div>
-                            <form action="" class="header__from-search">
-                                <input type="text" class="header__search" placeholder="Nhập để tìm kiếm">
-                            </form>
-                            <div class="header__user">
-                                <a href="#" class="header__user-setting-link">
-                                    <i class="header__user-setting-icon ti-settings"></i>
-                                </a>
-                                <a href="#" class="header__user-notify-link">
-                                    <i class="header__user-notify-icon ti-bell"></i>
-                                </a>
-                                <a href="#" class="header__user-img-link">
-                                    <div class="header__user-img" style="background-image: url(https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg);"></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- content -->
-                    <div class="admin__ctn">
-                        <div class="gird__row-admin ctn__content">
-                            <h1 class="ctn__heading">Thêm mới loại hàng hoá</h1>
-                            
-                            <!-- form add -->
-                            <div class="ctn__form">
-                                <form action="" class="ctn__form-add">
-                                    <label for="">Mã loại</label>
-                                    <input class="ctn__form-add-input" type="text" name="maloai" disabled placeholder="Auto">
-                                    <label for="">Tên loại</label>
-                                    <input class="ctn__form-add-input" type="text" name="tenloai" >
-                                    <!-- btn -->
-                                    <div class="ctn__form-btn">
-                                        <input class="btn" type="submit" name="submit" value="Thêm mới">
-                                        <input class="btn" type="reset" name="submit" value="Nhập lại">
-                                        <a href="danhSachloaihang.html"><input class="btn" type="button" name="submit" value="Danh sách"></a>
-                                    </div>
+                            <div class="header__content">
+                                <div class="header__topic">Admin</div>
+                                <form action="" class="header__from-search">
+                                    <input type="text" class="header__search" placeholder="Nhập để tìm kiếm">
                                 </form>
+                                <div class="header__user">
+                                    <a href="#" class="header__user-setting-link">
+                                        <i class="header__user-setting-icon ti-settings"></i>
+                                    </a>
+                                    <a href="#" class="header__user-notify-link">
+                                        <i class="header__user-notify-icon ti-bell"></i>
+                                    </a>
+                                    <a href="#" class="header__user-img-link">
+                                        <div class="header__user-img" style="background-image: url(https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg);"></div>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
                     </div>
-                </div>
-            </div> 
-        </div>
-    </div>
-</body>
-</html>
