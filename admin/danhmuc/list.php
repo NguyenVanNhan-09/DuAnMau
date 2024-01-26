@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../../assets/style/admin.css">
 <!-- content -->
 <div class="admin__ctn" style="overflow:auto;">
                     <div class="gird__row-admin ctn__content">
