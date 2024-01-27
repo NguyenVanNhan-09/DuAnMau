@@ -1,6 +1,7 @@
 <?php
 ob_start();
     include "../model/pdo.php";
+    include "../model/danhmuc.php";
     include "header.php";
 
     //controler
@@ -16,9 +17,8 @@ ob_start();
                 // kiểm tra người dùng có click vào add hay không
                 if(isset($_POST['addnew']) && ($_POST['addnew'])){
                     $tenLoai=$_POST['tenloai'];
-                    $sql="insert into danhmuc(name) values('$tenLoai')";
-                    pdo_execute($sql);
-                    header("Location: ?act=list_dm");
+                    insert_danhmuc($tenLoai);
+                    header("Location: index.php?act=list_dm");
                     exit();
                 }
                 include "danhmuc/add.php";
@@ -26,43 +26,40 @@ ob_start();
 
             // list danh mục
             case 'list_dm':
-                $sql="select * from danhmuc order by id desc";
-                $listDanhMuc = pdo_query($sql);
+                $listDanhMuc = list_danhmuc();
                 include "danhmuc/list.php";
                 break;
 
             // delete danh mục
             case 'delete_dm':
                 if(isset($_GET['id']) && ($_GET['id'] > 0)){
-                    $sql = "DELETE FROM danhmuc WHERE id=".$_GET['id'];
-                    pdo_execute($sql);
+                    delete_danhmuc($_GET['id']);
                 }
-                $sql="select * from danhmuc order by name";
-                $listDanhMuc = pdo_query($sql);
+                $listDanhMuc = list_danhmuc();
                 include "danhmuc/list.php";
                 break;
+                
             // update danh mục
             case 'update_dm':
                 $id = $_GET['id'];
                 if(isset($_GET['id']) && ($_GET['id'] > 0)){
-                    $sql = "SELECT * FROM danhmuc where id=$id";
-                    $updateDm = pdo_query_one($sql);
+                    $updateDm = update_danhmuc($id);
                 }
                 include 'danhmuc/update.php';
                 break;
+
             // upload danh muc
             case 'upload_dm':
                 if(isset($_POST['upload']) && ($_POST['upload'])){
                     $tenLoai=$_POST['tenloai'];
                     $id=$_POST['id'];
-                    $sql="update danhmuc set name='".$tenLoai."' where id=".$id;
-                    pdo_execute($sql);
+                    upload_danhmuc($tenLoai,$id);
                     $thongBao = "Cập nhật thành công";
                 }
-                $sql="select * from danhmuc order by id desc";
-                $listDanhMuc = pdo_query($sql);
+                $listDanhMuc = list_danhmuc();
                 include "danhmuc/list.php";
                 break;
+                
 
 
 

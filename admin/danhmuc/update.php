@@ -5,7 +5,7 @@
 ?>
 <div class="admin__ctn">
                     <div class="gird__row-admin ctn__content">
-                        <h1 class="ctn__heading">Cập nhật loại hàng hoá</h1>
+                        <h1 class="ctn__heading">Cập nhật loại hàng</h1>
                         
                         <!-- form add -->
                         <div class="ctn__form">
