@@ -71,21 +71,33 @@
                                 </a>
                             </li>
                             <li class="right__item">
-                                <a href="#" class="right__item-link">
+                                <a href="index.php?act=product" class="right__item-link">
                                     <i class="right__item-icon ti-heart"></i>
                                     <div class="right__item-text">Danh sách yêu thích</div>
                                 </a>
                             </li>
                             <li class="right__item">
-                                <a href="../admin.html" class="right__item-link">
+                                <a href="../../DuAnMau/admin" class="right__item-link">
                                     <i class="right__item-icon ti-check-box"></i>
                                     <div class="right__item-text">Quyền hạn</div>
                                 </a>
                             </li>
                             <li class="right__item">
                                 <a href="#" class="right__item-link">
-                                    <i class="right__item-icon ti-key"></i>
-                                    <div class="right__item-text">Đăng nhập</div>
+                                    <div class="right__item-content has-option">
+                                        <div class="right__item-link-text">
+                                            <i class="right__item-icon ti-key"></i>
+                                            <div class="right__item-text">tài khoản</div>
+                                        </div>
+                                        <ul class="right__item__select">
+                                            <li>
+                                                <a href="#" class="right__item__option js-login-btn">Đăng nhập</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="right__item__option js-register-btn">Đăng kí</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </a>
                             </li>
                         </ul>
@@ -97,7 +109,7 @@
                     <div class="gird__row centerheader__widget-content"> 
                         <div class="gird__col-3">
                             <div class="centerheader__logo">
-                                <a href="/" class="centerheader__logo-link">
+                                <a href="index.php" class="centerheader__logo-link">
                                     <img class="centerheader__logo-img" src="./assets/img/logo_X-shop.png" alt="logo">
                                 </a>
                             </div>
@@ -163,6 +175,14 @@
                             </li>
                             <li class="nav__item">
                                 <a href="#" class="nav__item-link">Danh mục</a>
+                                <!-- subnav -->
+                                <ul class="subnav__list">
+                                    <?php foreach($listDanhMucUser as $dm) : ?>
+                                    <li class="subnav__item">
+                                        <a href="index.php?act=sanpham&iddm=<?=$dm['id']?>" class="subnav__item-link"><?=$dm['name']?></a>
+                                    </li>
+                                    <?php endforeach;?>
+                                </ul>
                             </li>
                             <li class="nav__item">
                                 <a href="#" class="nav__item-link">Giới thiệu</a>
@@ -185,55 +205,3 @@
                 </div>
             </div>
         </header>
-
-        <!-- slider -->
-        <div class="slider">
-            <div class="gird">
-                <div class="gird__row">
-                    <div class="gird__half">
-                        <div class="slider__left">
-                            <div class="slider__left-img">
-                                <!-- Slideshow container -->
-                                <div class="slideshow-container" style="height: 100%;">
-                                    <!-- Full-width images with number and caption text -->
-                                    <div class="mySlides fade" style="height: 100%;">
-                                        <img class="slider__left-img" src="./assets/img/img__slider-4.jpg">
-                                    </div>
-                                
-                                    <div class="mySlides fade" style="height: 100%;">
-                                        <img class="slider__left-img" src="./assets/img/img__slider-2.jpg">
-                                    </div>
-                                
-                                    <div class="mySlides fade" style="height: 100%;">
-                                        <img class="slider__left-img" src="./assets/img/img__slider-3.jpg">
-                                    </div>
-                                
-                                    <!-- Next and previous buttons -->
-                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                    <!-- The dots/circles -->
-                                    <div class="quantity__slider-left" style="text-align:center">
-                                        <span class="dot" onclick="currentSlide(1)"></span>
-                                        <span class="dot" onclick="currentSlide(2)"></span>
-                                        <span class="dot" onclick="currentSlide(3)"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gird__half slider__right">
-                        <div class="gird__half slider__right-top">
-                            <div class="slider__right-top-img" style="background-image: url(./assets/img/img_slider-5.jpg);"></div>
-                        </div>
-                        <div class="gird__half slider__right-bottom">
-                            <div class="gird__half mr-15">
-                                <div class="slider__right-bottom-img" style="background-image: url(./assets/img/img_slider-6.jpg);"></div>
-                            </div>
-                            <div class="gird__half ml-15">
-                                <div class="slider__right-bottom-img" style="background-image: url(./assets/img/img_slider-7.jpg);"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>

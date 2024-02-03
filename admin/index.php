@@ -2,10 +2,11 @@
 ob_start();
     include "../model/pdo.php";
     include "../model/danhmuc.php";
+    include "../model/sanpham.php";
     include "header.php";
 
     //controler
-    if(isset($_GET['act'])){
+    if(isset($_GET['act']) && $_GET['act'] != ""){
         $act = $_GET['act'];
         switch ($act) {
             /****************************************************************
@@ -17,13 +18,12 @@ ob_start();
                 // kiểm tra người dùng có click vào add hay không
                 if(isset($_POST['addnew']) && ($_POST['addnew'])){
                     $tenLoai=$_POST['tenloai'];
-                    insert_danhmuc($tenLoai);
+                    add_danhmuc($tenLoai);
                     header("Location: index.php?act=list_dm");
                     exit();
                 }
                 include "danhmuc/add.php";
                 break;
-
             // list danh mục
             case 'list_dm':
                 $listDanhMuc = list_danhmuc();
@@ -53,46 +53,92 @@ ob_start();
                 if(isset($_POST['upload']) && ($_POST['upload'])){
                     $tenLoai=$_POST['tenloai'];
                     $id=$_POST['id'];
-                    upload_danhmuc($tenLoai,$id);
+                    upload_danhmuc($tenLoai,$id);   
                     $thongBao = "Cập nhật thành công";
                 }
                 $listDanhMuc = list_danhmuc();
                 include "danhmuc/list.php";
                 break;
-                
-
-
-
-
-
-
 
             /****************************************************************
              *                              SẢN PHẨM                        *
              ****************************************************************/
-            case 'add_sp':
+            // add sản phẩm
+             case 'add_sp':
+                if(isset($_POST['addnew']) && ($_POST['addnew'])){
+                    $nameSp = $_POST['namesp'];
+                    $priceSp = $_POST['pricesp'];
+                    $detailSp = $_POST['detailsp'];
+                    $idDm = $_POST['iddm'];
+                    $imgSp = $_FILES['imgsp']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES['imgsp']['name']);
+                    move_uploaded_file($_FILES['imgsp']['tmp_name'], $target_file);
+                    add_sanpham($nameSp, $priceSp, $detailSp, $imgSp, $idDm);
+                    header("location: index.php?act=list_sp");
+                    exit();
+                }
+                $listDanhMuc = list_danhmuc();
                 include "sanpham/add.php";
                 break;
+            
+            // list sản phẩm
             case 'list_sp':
-                $sql = "SELECT * FROM sanpham order by id desc";
-                $listSanPham = pdo_query($sql);
+                // search theo danh mục và tên
+                if(isset($_POST['listok']) && ($_POST['listok'])){
+                    $keyWord=$_POST['keyword'];
+                    $idDm = $_POST['iddm'];
+                }else{
+                    $keyWord = "";
+                    $idDm = 0;
+                }
+                $listDanhMuc = list_danhmuc();
+                $listSanPham = list_sanpham($keyWord, $idDm);
                 include "sanpham/list.php";
                 break;
+            // delete sản phẩm
             case 'delete_sp':
+                $id = $_GET['id'];
                 if(isset($_GET['id']) && ($_GET['id'] > 0)) {
-                    $sql = "DELETE FROM sanpham WHERE id=$id";
-                    pdo_execute($sql);
+                    delete_sanpham($_GET['id']);
                 };
-                // $sql = "SELECT * FROM sanpham order by id desc";
-                // $listSanPham = pdo_query($sql);
-                // include "sanpham/list.php";
-                // break;
+                $listSanPham = list_sanpham("",0);
+                include "sanpham/list.php";
+                break;
+            // update sản phẩm 
+            case 'update_sp':
+                $id = $_GET['id'];
+                if(isset($_GET['id']) && ($_GET['id'] > 0)){
+                    $updateSp = update_sanpham($id);
+                };
+                $listDanhMuc = list_danhmuc();
+                include "sanpham/update.php";
+                break;
 
+            // upload sản phẩm
+            case 'upload_sp':
+                if(isset($_POST['upload2']) && ($_POST['upload2'])){
+                    $id = $_POST['id'];
+                    $nameSp = $_POST['namesp'];
+                    $priceSp = $_POST['pricesp'];
+                    $detailSp = $_POST['detailsp'];
+                    $idDm = $_POST['iddm'];
+                    $imgSp = $_FILES['imgsp']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES['imgsp']['name']);
+                    move_uploaded_file($_FILES['imgsp']['tmp_name'], $target_file);
+                    // upload lên
+                    upload_sanpham($id, $nameSp, $priceSp, $imgSp, $detailSp, $idDm);
+                };
+                $listDanhMuc = list_danhmuc();
+                $listSanPham = list_sanpham("",0);
+                include "sanpham/list.php";
+                break;
 
-
-
-
-            // khách hàng
+            /****************************************************************
+            *                              KHÁCH HÀNG                       *
+            ****************************************************************/
+            
             // bình luận
             default:
                 include "home.php";

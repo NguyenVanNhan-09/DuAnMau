@@ -20,8 +20,15 @@
                                         <td><?=$danhMuc['id']?></td>
                                         <td><?=$danhMuc['name']?></td>
                                         <td class="btn-up-de">
-                                            <a href="index.php?act=update_dm&id=<?= $danhMuc['id']?>"><button class="btn-delete btn" style="padding: 10px 20px;">sửa</button></a>
-                                            <a onclick="return confirm('Ban co chac muon xoa khong ?')" href="index.php?act=delete_dm&id=<?= $danhMuc['id']?>"><button class="btn-delete btn" style="padding: 10px 20px;">xoá</button></a>
+                                            <a 
+                                                href="index.php?act=update_dm&id=<?= $danhMuc['id']?>">
+                                                <button class="btn-delete btn" style="padding: 10px 20px;">sửa</button>
+                                            </a>
+                                            <a 
+                                                onclick="return confirm('Ban co chac muon xoa khong ?')" 
+                                                href="index.php?act=delete_dm&id=<?= $danhMuc['id']?>">
+                                                <button class="btn-delete btn" style="padding: 10px 20px;">xoá</button>
+                                            </a>
                                         </td>
                                     </tr>
                                 </tbody>

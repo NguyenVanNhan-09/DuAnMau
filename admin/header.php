@@ -66,7 +66,7 @@
                             </li>
                             <div class="sidebar__bottom">
                                 <li class="sidebar__item">
-                                    <a href="index.html" class="sidebar__item-link">
+                                    <a href="../../DuAnMau/" class="sidebar__item-link">
                                         <span class="sidebar__item-icon ti-home"></span>
                                         <span class="sidebar__item-text">Người dùng</span>
                                     </a>

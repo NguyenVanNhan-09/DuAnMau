@@ -1,20 +1,31 @@
-<!-- đóng vai trò là controller -->
-<!-- // Điều hướng -->
 <?php
-    // header
-    include("./view/header.php");
-    
-    // content
+
+include "./model/pdo.php";
+include "./model/danhmuc.php";
+include "./model/sanpham.php";
+include "./assets/globals.php";
+
+$listDanhMucUser = list_danhmuc();
+$listSanPhamUserFavorite = list_sanpham_user_favorite();
+$listSanPhamUser = list_sanpham_user();
+
+    include "./view/header.php";
+
     // logic điều hướng
     if(isset($_GET["act"]) && $_GET["act"] != ""){
-        if($_GET["act"] == "product"){
-            include("./view/product.php");
-        }
-    } else {
-        include("./view/home.php");
-    }
+      $act = $_GET['act'];
+      switch ($act) {
+        case 'product':
+            include "./view/product.php";
+            break;
+        default:
+            include "./view/home.php";
+            break;
+      } 
     
-    
+    }else{
+        include "./view/home.php";
+    };
     
 
 

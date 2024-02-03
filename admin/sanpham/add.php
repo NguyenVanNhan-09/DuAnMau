@@ -5,24 +5,21 @@
                         
                         <!-- form add -->
                         <div class="ctn__form">
-                            <form action="index.php?act=add_dm" method="post" class="ctn__form-add">
+                            <form action="index.php?act=add_sp" method="post" enctype="multipart/form-data" class="ctn__form-add">
                                 <label for="">Tên sản phẩm</label>
-                                <input class="ctn__form-add-input" type="text" name="tensanpham" require>
+                                <input class="ctn__form-add-input" type="text" name="namesp" required>
                                 <label for="">Giá sản phẩm</label>
-                                <input class="ctn__form-add-input" type="text" name="giasanpham" required>
+                                <input class="ctn__form-add-input" type="text" name="pricesp" required>
                                 <label for="">Ảnh sản phẩm</label>
-                                <input class="ctn__form-add-input" type="text" name="anhsanpham" required>
+                                <input class="ctn__form-add-input" type="file" name="imgsp">
                                 <label for="">Mô tả chi tiết sản phẩm</label>
-                                <input class="ctn__form-add-input" type="text" name="motasanpham" required>
+                                <input class="ctn__form-add-input" type="text" name="detailsp" required>
                                 <label for="">Danh mục sản phẩm</label>
-                                <input class="ctn__form-add-input" type="text" name="danhmucsanpham" required>
-                                <h2 style="color:green">
-                                    <?php 
-                                        if(isset($thongBao) && ($thongBao != "")){
-                                            echo $thongBao;
-                                        };
-                                    ?>
-                                </h2>
+                                <select name="iddm" class="form__select">
+                                    <?php foreach($listDanhMuc as $danhMuc) : ?>
+                                        <option value="<?= $danhMuc['id']?>"> <?= $danhMuc['name']?></option>
+                                    <?php endforeach?>
+                                </select>   
                                 <!-- btn -->
                                 <div class="ctn__form-btn">
                                     <input class="btn" type="submit" name="addnew" value="Thêm mới">

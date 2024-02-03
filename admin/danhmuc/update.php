@@ -1,6 +1,6 @@
 <?php 
     if(is_array($updateDm)){
-        extract($updateDm);
+        
     }
 ?>
 <div class="admin__ctn">
@@ -13,7 +13,7 @@
                                 <label for="">Mã loại</label>
                                 <input class="ctn__form-add-input" type="text" name="maloai" disabled placeholder="Auto">
                                 <label for="">Tên loại</label>
-                                <input class="ctn__form-add-input" type="text" name="tenloai" value="<?php if(isset($updateDm['name']) && ($updateDm['name']!="")) echo $updateDm['name'];?>" required>
+                                <input class="ctn__form-add-input" type="text" name="tenloai" value="<?php if(isset($updateDm['name']) && ($updateDm['name']!="")) echo $updateDm['name'];?>">
                                 <!-- btn -->
                                 <div class="ctn__form-btn">
                                     <input type="hidden" name="id" value="<?php if(isset($updateDm['id']) && ($updateDm['id']>0)) echo $updateDm['id']; ?>">
