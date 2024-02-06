@@ -63,7 +63,7 @@
                     <?php $img = $img_path.$spf['img']?>
                     <div class="gird__col-2-4 product-item">
                         <!-- favorite-product__item -->
-                        <a href="index.php?act=detail_sp&id=<?=$spf['id']?>" class="favorite-product__item">
+                        <a href="index.php?act=detail_product&id=<?=$spf['id']?>" class="favorite-product__item">
                             <div class="favorite-product__item-img" style="background-image: url('<?=$img?>');"></div>
                             <!-- <img src="./assets/img/img_slider-7.jpg" alt="" class="favorite-product__item-img"> -->
                             <div class="favorite-product__item-content">
@@ -95,7 +95,7 @@
                         <?php $img=$img_path.$sp['img'];?>
                         <div class="gird__col-2-4 product-item">
                             <!-- home-product__item -->
-                            <a href="#" class="home-product__item" >
+                            <a href="index.php?act=detail_product&id=<?=$sp['id']?>" class="home-product__item" >
                                 <div class="home-product__item-img" style="background-image: url('<?=$img?>');"></div>
                                 <!-- <img src="./assets/img/img_slider-7.jpg" alt="" class="home-product__item-img"> -->
                                 <div class="home-product__item-content">

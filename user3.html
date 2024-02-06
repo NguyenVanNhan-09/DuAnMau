@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/style/base.css">
     <link rel="stylesheet" href="./assets/style/main.css">
     <link rel="stylesheet" href="./assets/style/product.css">
+    <link rel="stylesheet" href="./assets/style/login-out.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
@@ -92,10 +93,10 @@
                                         </div>
                                         <ul class="right__item__select">
                                             <li>
-                                                <a href="#" class="right__item__option">Đăngnhqwwwwwwwww wwwwwwwwwwwậpqwwww wwwwwww wwww</a>
+                                                <a href="#" class="right__item__option js-login-btn">Đăng nhập</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="right__item__option">Đăng kí</a>
+                                                <a href="#" class="right__item__option js-register-btn">Đăng kí</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -200,204 +201,69 @@
         </header>
 
 
-        <!-- content -->
-        <div class="product">
+        <!-- login -->
+        <!-- <div class="login">
             <div class="gird">
-                <div class="gird__row product__content">
-                    <div class="product__images">
-                        <div class="product__images-main" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lq7e8unxkkl3b6);"></div>
-                        <div class="product__images-share"></div>
-                    </div>
-                    
-                    <div class="product__info">
-                        <div class="product__info-name">Đồng hồ nam nữ Unisex Led kiểu dáng phi hành gia dây cao su êm tay thời trang cá tính BLACK29</div>
-                        <div class="product__info-rank">
-                            <div class="product__info-rank-quatity pr-15 pl-10 border-right">4.0</div>
-                            <div class="mb-0 fz-1-1 lh-1 pr-15 pl-10">
-                                <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="product__info-rank-sold pr-15 pl-10 border-right border-left"><span class="product__info-rank-sold-quantity pr-10">111</span>đã bán</div>
+                <div class="gird__row">
+                    <div class="login-content">
+                        <div class="intro">
+                            <div class="intro__heading">Welcome to [X-shop]</div>
+                            <div class="intro__desc">
+                                Here, we believe that building a strong professional network begins with your participation. 
+                                We are delighted to offer a modern and user-friendly service to ensure you have the best experience.</div>
+                            <div class="intro__img" style="background-image: url(./assets/img/Frame.png);"></div>
                         </div>
-                        <div class="product__info-price">
-                            <div class="product__info-price-old">150.000</div>
-                            <div class="product__info-price-new">100.000 usd</div>
-                        </div>
-                        <div class="product__info-shipping">
-                            <div class="product__info-shipping-title">Vận chuyển</div>
-                            <div class="product__info-shipping-list">
-                                <div class="product__info-shipping-item">
-                                    <div class="product__info-shipping-item-icon ti-money"></div>
-                                    Miễn phí vận chuyển
-                                </div>
-                                <div class="product__info-shipping-item">
-                                    <div class="product__info-shipping-item-icon ti-location-pin"></div>
-                                    Vận chuyển tới :
-                                </div>
-                                <div class="product__info-shipping-item">
-                                    <div class="product__info-shipping-item-icon ti-truck"></div>
-                                    Phí vận chuyển : 0đ
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product__info-quantity">
-                            <div class="product__info-quantity-title">Số lượng</div>
-                            <div class="product__info-quantity-btn">
-                                <button><i class="ti-minus"></i></button>
-                                <input type="number">
-                                <button><i class="ti-plus"></i></button>
-                            </div>
-                        </div>
-                        <div class="product__info-btn">
-                            <div class="product__info-btn-buy">
-                                <button>mua ngay</button>
-                            </div>
-                            <div class="product__info-btn-cw">
-                                <button class="product__info-btn-cart">
-                                    <i class="product__info-btn-cart-icon ti-shopping-cart"></i>
-                                    thêm vào giỏ hàng
-                                </button>
-                                <button class="product__info-btn-wishlist">
-                                    <i class="product__info-btn-cart-icon ti-heart"></i>
-                                    thêm vào yêu thích
-                                </button>
+                        <div class="form">
+                            <div class="form__heading">Login</div>
+                            <form action="" class="form__input">
+                                <input type="text" placeholder="nhập email">
+                                <input type="text" placeholder="nhập password">
+                                <a class="form__forget" href="#">quên mật khẩu?</a>
+                                <input class="form__btn" type="submit" value="Đăng nhập">
+                            </form>
+                            <div class="form__sub">Hoặc tiếp tục với</div>
+                            <div class="form__app">
+                                <a href="#" class="form__app-instagram"><i class="ti-instagram"></i></a>
+                                <a href="#" class="form__app-tiwter"><i class="ti-twitter"></i></a>
+                                <a href="#" class="form__app-tumblr"><i class="ti-tumblr"></i></a>
+                                <a href="#" class="form__app-apple"><i class="ti-apple"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="gird__row product__detail">
-                    <div class="product__detail-heading">Mô tả sản phẩm</div>
-                    <div class="product__detail-text">
-                        MÔ TẢ SẢN PHẨM:
-                        Đường kính quay số: 32mm
-                        Độ dày quay số: 9.5mm
-                        Chiều rộng dây đeo: 14mm
-                        Chiều dài dây đeo: 235mm (có thể điều chỉnh)
-                        Loại chuyển động: Thạch anh
-                        Chất liệu “”:
-                        Chất liệu dây đeo: PU
-                        Gói: “
-                        1x Đồng hồ (KHÔNG CÓ HỘP QUÀ TẶNG)
-                         (Sử dụng màng bọc bong bóng.)
-                        Làm thế nào để nhận được một HỘP quà?
-                        - Hộp Cần được mua riêng. Vui lòng vào Hộp / Đóng gói của chúng tôi để chọn một trong những danh mục trang chủ.
-                        ------------------------------------------
-                        Lưu ý
-                        Do điều kiện ánh sáng và màn hình khác nhau, màu sắc có thể khác với màu gốc. Do điều kiện ánh sáng và màn hình khác nhau, màu sắc có thể khác với màu gốc. Vui lòng tham khảo đối tượng thực tế.
-                    </div>
-                </div>
+            </div>
+        </div> -->
 
-                <div class="gird__row product__evaluate">
-                    <div class="product__evaluate-heading">Đánh giá sản phẩm</div>
-                    <form action="">
-                        <input class="product__evaluate-input" type="text">
-                        <button class="product__evaluate-btn">gửi</button>
-                    </form>
-                </div>
-
-                <div class="gird__row product__samekind">
-                    <div class="product__samekind-heading">Sản phẩm cùng loại</div>
-                    <div class="favorite-product__list width-full">
-                        <div class="gird__row">
-                            <div class="gird__col-2-4 product-item">
-                                <!-- favorite-product__item -->
-                                <a href="#" class="favorite-product__item">
-                                    <div class="favorite-product__item-img" style="background-image: url(https://rolex.dafc.com.vn/wp-content/uploads/watch-assets-front-facing/landscape_assets/m124300-0001_modelpage_front_facing_landscape.png);"></div>
-                                    <!-- <img src="/upload/" alt="" style="width: 100px;height: 100px;"> -->
-                                    <!-- <img src="./assets/img/img_slider-7.jpg" alt="" class="favorite-product__item-img"> -->
-                                    <div class="favorite-product__item-content">
-                                        <div class="favorite-product__item-name">SKY-DWELLER</div>
-                                        <div class="favorite-product__item-price">170,008,500vnđ</div>
-                                        <div class="favorite-product__item__rank">
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="gird__col-2-4 product-item">
-                                <!-- favorite-product__item -->
-                                <a href="#" class="favorite-product__item" >
-                                    <div class="favorite-product__item-img" style="background-image: url(https://rolex.dafc.com.vn/wp-content/uploads/watch-assets-front-facing/landscape_assets/m124300-0001_modelpage_front_facing_landscape.png);"></div>
-                                    <!-- <img src="./assets/img/img_slider-7.jpg" alt="" class="favorite-product__item-img"> -->
-                                    <div class="favorite-product__item-content">
-                                        <div class="favorite-product__item-name">SKY-DWELLER</div>
-                                        <div class="favorite-product__item-price">170,008,500vnđ</div>
-                                        <div class="favorite-product__item__rank">
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="gird__col-2-4 product-item">
-                                <!-- favorite-product__item -->
-                                <a href="#" class="favorite-product__item" >
-                                    <div class="favorite-product__item-img" style="background-image: url(https://rolex.dafc.com.vn/wp-content/uploads/watch-assets-front-facing/landscape_assets/m124300-0001_modelpage_front_facing_landscape.png);"></div>
-                                    <!-- <img src="./assets/img/img_slider-7.jpg" alt="" class="favorite-product__item-img"> -->
-                                    <div class="favorite-product__item-content">
-                                        <div class="favorite-product__item-name">SKY-DWELLER</div>
-                                        <div class="favorite-product__item-price">170,008,500vnđ</div>
-                                        <div class="favorite-product__item__rank">
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="gird__col-2-4 product-item">
-                                <!-- favorite-product__item -->
-                                <a href="#" class="favorite-product__item" >
-                                    <div class="favorite-product__item-img" style="background-image: url(https://rolex.dafc.com.vn/wp-content/uploads/watch-assets-front-facing/landscape_assets/m124300-0001_modelpage_front_facing_landscape.png);"></div>
-                                    <!-- <img src="./assets/img/img_slider-7.jpg" alt="" class="favorite-product__item-img"> -->
-                                    <div class="favorite-product__item-content">
-                                        <div class="favorite-product__item-name">SKY-DWELLER</div>
-                                        <div class="favorite-product__item-price">170,008,500vnđ</div>
-                                        <div class="favorite-product__item__rank">
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="gird__col-2-4 product-item">
-                                <!-- favorite-product__item -->
-                                <a href="#" class="favorite-product__item" >
-                                    <div class="favorite-product__item-img" style="background-image: url(https://rolex.dafc.com.vn/wp-content/uploads/watch-assets-front-facing/landscape_assets/m124300-0001_modelpage_front_facing_landscape.png);"></div>
-                                    <!-- <img src="./assets/img/img_slider-7.jpg" alt="" class="favorite-product__item-img"> -->
-                                    <div class="favorite-product__item-content">
-                                        <div class="favorite-product__item-name">SKY-DWELLER</div>
-                                        <div class="favorite-product__item-price">170,008,500vnđ</div>
-                                        <div class="favorite-product__item__rank">
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="favorite-product__item__star--gold fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                </a>
+        <!-- resgister -->
+        <div class="register">
+            <div class="gird">
+                <div class="gird__row">
+                    <div class="register-content">
+                        <div class="form-register">
+                            <div class="form__heading">Register</div>
+                            <form action="#" class="form__input">
+                                <input type="text" placeholder="nhập name">
+                                <input type="text" placeholder="nhập email">
+                                <input type="text" placeholder="nhập password">
+                                <input class="form__btn" type="submit" value="Đăng ký">
+                            </form>
+                            <div class="form__sub">Hoặc tiếp tục với</div>
+                            <div class="form__app">
+                                <a href="#" class="form__app-instagram"><i class="ti-instagram"></i></a>
+                                <a href="#" class="form__app-tiwter"><i class="ti-twitter"></i></a>
+                                <a href="#" class="form__app-tumblr"><i class="ti-tumblr"></i></a>
+                                <a href="#" class="form__app-apple"><i class="ti-apple"></i></a>
                             </div>
                         </div>
+                        <div class="intro-resgister">
+                            <div class="intro__heading">Hãy đăng ký một tài khoản ở [X-shop]</div>
+                            <div class="intro__desc">
+                                Here, we believe that building a strong professional network begins with your participation. 
+                                We are delighted to offer a modern and user-friendly service to ensure you have the best experience.</div>
+                            <div class="intro__img" style="background-image: url(./assets/img/Frame.png);"></div>
+                        </div>
                     </div>
-                    <div class="product__samekind-more">xem thêm</div>
                 </div>
-
             </div>
         </div>
 

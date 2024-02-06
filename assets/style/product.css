@@ -1,0 +1,224 @@
+.product {
+    margin: 16px 0;
+}
+
+.product__content {
+    padding: 12px;
+    box-shadow: 1px 1px 1px rgb(255, 255, 255);
+}
+
+.product__images {
+    width: 40%;
+}
+
+.product__images-main {
+    padding-top: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+
+.product__info {
+    width: 60%;
+    padding-left: 50px;
+}
+
+.product__info-name {
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.product__info-rank {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.product__info-rank-quatity {
+    font-size: 1.6rem;
+}
+
+.product__info-rank-sold {
+    font-size: 1.6rem;
+    color: #767676;
+}
+.product__info-rank-sold-quantity {
+    font-size: 1.4rem;
+    color: #767676;
+}
+
+.product__info-price {
+    display: flex;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.product__info-price-old {
+    font-size: 1.8rem;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.product__info-price-new {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.product__info-shipping {
+    display: flex;
+    margin-top: 10px;
+}
+
+.product__info-quantity-title,
+.product__info-shipping-title {
+    font-size: 1.6rem;
+    padding: 0 36px 0 10px;
+}
+
+.product__info-shipping-list {
+    font-size: 1.2rem;
+}
+
+.product__info-shipping-item {
+    display: flex;
+    padding-bottom: 14px;
+    font-size: 1.4rem;
+}
+
+.product__info-shipping-item-icon {
+    padding-right: 8px;
+    font-size: 2rem;
+}   
+
+.product__info-quantity {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.product__info-quantity-btn>button {
+    padding: 6px 12px;
+    border: 1px solid rgba(0,0,0,.14);
+}
+
+.product__info-quantity-btn>input {
+    padding: 6px 12px;
+    width: 60px;
+    border: 1px solid rgba(0,0,0,.14);
+}
+
+.product__info-btn {
+    margin-top: 60px;
+}
+
+.product__info-btn-buy {
+    display: flex;
+    justify-content: center;
+}
+
+.product__info-btn-buy>button {
+    padding: 16px;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(2 132 199);
+}
+
+.product__info-btn-cw {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__info-btn-cart {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.4rem;
+    border: 1px solid rgb(2 132 199);
+    color: rgb(2 132 199);
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 12px;
+    background-color: transparent;
+}
+
+.product__info-btn-wishlist {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.4rem;
+    border: 1px solid rgb(2 132 199);
+    color: rgb(2 132 199);
+    border-radius: 6px;
+    text-align: center;
+    margin-left: 12px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.product__samekind,
+.product__evaluate,
+.product__detail {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.product__samekind-heading,
+.product__evaluate-heading,
+.product__detail-heading {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 20px 0 20px 14px;
+    background-color: #fafafa;
+    width: 100%;
+    margin-bottom: 16px;
+    letter-spacing: 1.5px;
+}
+
+.product__detail-text {
+    font-size: 1.4rem;
+    line-height: 2;
+    text-align: justify;
+    letter-spacing: 1.5px;
+}   
+
+.product__evaluate-input {
+    font-size: 1.4rem;
+    padding: 16px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.product__evaluate-btn {
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 30px;
+    border: none;
+    min-width: 80px;
+    background-color: rgb(2 132 199);
+    cursor: pointer;
+}
+
+.product__samekind-more {
+    font-size: 1.6rem;
+    color: rgb(2 132 199);
+    padding: 16px 60px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid rgb(2 132 199);
+    margin-top: 20px;
+    margin: 25px 0 60px;
+    text-decoration: none;
+    cursor: pointer;
+}

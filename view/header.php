@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/style/base.css">
     <link rel="stylesheet" href="./assets/style/main.css">
+    <link rel="stylesheet" href="./assets/style/product.css">
+    <link rel="stylesheet" href="./assets/style/login-out.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
@@ -67,7 +69,7 @@
                             <li class="right__item">
                                 <a href="#" class="right__item-link">
                                     <i class="right__item-icon ti-user"></i>
-                                    <div class="right__item-text">Tài khoản của tôi</div>
+                                    <div class="right__item-text js-register-btn">Tài khoản của tôi</div>
                                 </a>
                             </li>
                             <li class="right__item">
@@ -83,22 +85,44 @@
                                 </a>
                             </li>
                             <li class="right__item">
-                                <a href="#" class="right__item-link">
-                                    <div class="right__item-content has-option">
-                                        <div class="right__item-link-text">
-                                            <i class="right__item-icon ti-key"></i>
-                                            <div class="right__item-text">tài khoản</div>
+                                <?php 
+                                    if(isset($_SESSION['acc'])){
+                                        extract($_SESSION['acc']);
+                                ?>
+                                    <a href="index.php?act=login" class="right__item-link">
+                                        <div class="right__item-content has-option">
+                                            <div class="right__item-link-text">
+                                                <i class="right__item-icon ti-key"></i>
+                                                <div class="right__item-text"><?=$name?></div>
+                                            </div>
+                                            <ul class="right__item__select">
+                                                <li>
+                                                    <a href="index.php?act=edit" class="right__item__option">cập nhật tài khoản</a>
+                                                </li>
+                                                <li>
+                                                    <a href="index.php?act=forget" class="right__item__option">quên mật khẩu</a>
+                                                </li>
+                                                <li>
+                                                    <a href="admin/index.php" class="right__item__option">đăng nhập admin</a>
+                                                </li>
+                                                <li>
+                                                    <a href="index.php?act=exit" class="right__item__option">thoát</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <ul class="right__item__select">
-                                            <li>
-                                                <a href="#" class="right__item__option js-login-btn">Đăng nhập</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="right__item__option js-register-btn">Đăng kí</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </a>
+                                    </a>
+                                <?php
+                                    }else{
+                                ?>
+                                    <a href="index.php?act=login" class="right__item-link">
+                                        <div class="right__item-content has-option">
+                                            <div class="right__item-link-text">
+                                                <i class="right__item-icon ti-key"></i>
+                                                <div class="right__item-text">tài khoản</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                <?php }?>
                             </li>
                         </ul>
                     </div>  
@@ -171,16 +195,16 @@
                     <div class="gird__row nav__content">
                         <ul class="nav__list">
                             <li class="nav__item">
-                                <a href="#" class="nav__item-link">Trang chủ</a>
+                                <a href="index.php" class="nav__item-link">Trang chủ</a>
                             </li>
                             <li class="nav__item">
                                 <a href="#" class="nav__item-link">Danh mục</a>
                                 <!-- subnav -->
                                 <ul class="subnav__list">
                                     <?php foreach($listDanhMucUser as $dm) : ?>
-                                    <li class="subnav__item">
-                                        <a href="index.php?act=sanpham&iddm=<?=$dm['id']?>" class="subnav__item-link"><?=$dm['name']?></a>
-                                    </li>
+                                        <li class="subnav__item">
+                                            <a href="index.php?act=product&iddm=<?=$dm['id']?>" class="subnav__item-link"><?=$dm['name']?></a>
+                                        </li>
                                     <?php endforeach;?>
                                 </ul>
                             </li>
@@ -198,8 +222,10 @@
                             </li>
                         </ul>
                         <div class="nav__search">
-                            <input type="text" class="nav__search-input">
-                            <i class="nav__search-input-icon ti-search"></i>
+                            <form action="index.php?act=product" method="post">
+                                <input type="text" name="kyw" class="nav__search-input" placeholder="tìm kiếm sản phẩm">
+                                <i class="nav__search-input-icon ti-search"></i>
+                            </form>
                         </div>
                     </div>
                 </div>

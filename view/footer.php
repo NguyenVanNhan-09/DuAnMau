@@ -179,61 +179,6 @@
 
 </div>
 
-    <div class="login js-model js-model__login">
-        <!-- w900 h500 -->
-        <div class="login-container js-model-ctn">
-            <!-- 300 -->
-            <div class="login-container__left"></div>
-            <!-- 600 -->
-            <div class="login-container__right">
-                <div class="login-container__right-icon js-close-btn__login"><i class="ti-close"></i></div>
-                <div class="content-right">
-                    <div class="content-right__heading">Đăng nhập</div>
-                    <form action="" class="content-right__form">
-                        <label for="">Name</label>
-                        <input type="text">
-                        
-                        <label for="">Password</label>
-                        <input type="text">
-
-                        <div class="content-right__form-text">bạn chưa có tài khoản? <a href="#">đăng kí</a></div>
-
-                        <input class="content-right__form-btn" type="submit" value="đăng nhập">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="register js-model js-model__register">
-        <!-- w900 h500 -->
-        <div class="register-container js-model-ctn">
-            <!-- 300 -->
-            <div class="register-container__left"></div>
-            <!-- 600 -->
-            <div class="register-container__right">
-                <div class="register-container__right-icon js-close-btn__register"><i class="ti-close"></i></div>
-                <div class="content-right">
-                    <div class="content-right__heading">Đăng kí</div>
-                    <form action="" class="content-right__form">
-                        <label for="">Name</label>
-                        <input type="text">
-                        
-                        <label for="">Password</label>
-                        <input type="text">
-
-                        <label for="">Password again</label>
-                        <input type="text">
-
-                        <div class="content-right__form-text">bạn chưa có tài khoản? <a href="#">đăng kí</a></div>
-
-                        <input class="content-right__form-btn" type="submit" value="đăng nhập">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://kit.fontawesome.com/dcbefb07f6.js" crossorigin="anonymous"></script>
     <script src="./assets/javaScript/main.js"></script>
 </body>

@@ -1,0 +1,158 @@
+.login {
+    margin: 60px 0;
+}
+
+.register {
+    margin: 60px 0;
+}
+
+.login-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro {
+    margin-right: 16px;
+    border-right: 1px dashed #999;
+}
+
+.intro-resgister {
+    padding-left: 16px;
+    border-left: 1px dashed #999;
+}
+
+.intro__heading {
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--black-color);
+}
+
+.intro__desc {
+    margin: 30px 0;
+    font-size: 1.5rem;
+    line-height: 2.5;
+    letter-spacing: 1px;
+    color: var(--black-color);
+}
+
+.intro__img {
+    width: 558px;
+    height: 370px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-register {
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__heading {
+    font-size: 2.5rem;
+    color: var(--black-color);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.form__input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0 10px 0;
+}
+
+.form__input>input{
+    min-width: 400px;
+    padding: 16px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-bottom: 26px;
+    font-size: 1.4rem;
+}
+
+.form__link {    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__link>span {
+    font-size: 1.6rem;
+    color: #6C737F;
+}
+
+.form__forget {
+    font-size: 1.6rem;
+    color: #6C737F;
+    text-decoration: none;
+}
+
+.form__has-acc {
+    font-size: 1.6rem;
+    color: #6C737F;
+    text-decoration: none;
+}
+
+
+.form__btn {
+    cursor: pointer;
+    margin-top: 26px;
+    background-color: #4461F2;
+    color: var(--white-color);
+    font-weight: bold;
+}
+
+.form__btn:hover {
+    background-color:rgba(68, 97, 242, 0.8);
+}
+
+.form__sub {
+    font-size: 1.6rem;
+    color: var(--black-color);
+}
+
+.form__app {
+    margin-top: 26px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.form__app-apple,
+.form__app-tumblr,
+.form__app-tiwter,
+.form__app-instagram {
+    text-decoration: none;
+    color: #333;
+    padding: 14px;
+    border-radius: 15px;
+    background-color: var(--white-color);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.form__app-apple:hover,
+.form__app-tumblr:hover,
+.form__app-tiwter:hover,
+.form__app-instagram:hover {
+    background-color: #e4e4e4;
+}
+
