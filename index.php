@@ -77,8 +77,16 @@
             };
             include "./view/taikhoan/login.php";
             break;
-
-
+        case 'update_acc':
+            $id = $_GET['idtk'];
+            if(isset($_GET['idtk']) && ($_GET['idtk'] > 0)){
+                $updateAcc = update_acc($id);
+            }
+            include "./view/taikhoan/update_acc.php";
+            break;
+        case 'upload_acc':
+            // ...
+            break;
         default:
             include "./view/home.php";
             break;

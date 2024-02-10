@@ -87,17 +87,17 @@
                             <li class="right__item">
                                 <?php 
                                     if(isset($_SESSION['acc'])){
-                                        extract($_SESSION['acc']);
+                                        $tk = $_SESSION['acc'];
                                 ?>
                                     <a href="index.php?act=login" class="right__item-link">
                                         <div class="right__item-content has-option">
                                             <div class="right__item-link-text">
                                                 <i class="right__item-icon ti-key"></i>
-                                                <div class="right__item-text"><?=$name?></div>
+                                                <div class="right__item-text"><?=$tk['name']?></div>
                                             </div>
                                             <ul class="right__item__select">
                                                 <li>
-                                                    <a href="index.php?act=edit" class="right__item__option">cập nhật tài khoản</a>
+                                                    <a href="index.php?act=update_acc&idtk=<?=$tk['id']?>" class="right__item__option">cập nhật tài khoản</a>
                                                 </li>
                                                 <li>
                                                     <a href="index.php?act=forget" class="right__item__option">quên mật khẩu</a>

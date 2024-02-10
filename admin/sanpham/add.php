@@ -16,6 +16,7 @@
                                 <input class="ctn__form-add-input" type="text" name="detailsp" required>
                                 <label for="">Danh mục sản phẩm</label>
                                 <select name="iddm" class="form__select">
+                                    <option value="0" disabled>Danh mục</option>
                                     <?php foreach($listDanhMuc as $danhMuc) : ?>
                                         <option value="<?= $danhMuc['id']?>"> <?= $danhMuc['name']?></option>
                                     <?php endforeach?>

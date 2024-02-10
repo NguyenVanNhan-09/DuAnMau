@@ -9,4 +9,9 @@
         $checkacc = pdo_query_one($sql);
         return $checkacc;
     };
+    function update_acc($id){
+        $sql = "SELECT * FROM taikhoan where id=$id";
+        $updateAcc = pdo_query_one($sql);
+        return $updateAcc;
+    };
 ?>
