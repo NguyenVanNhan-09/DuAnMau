@@ -3,6 +3,7 @@ ob_start();
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
+    include "../model/taikhoan.php";
     include "header.php";
 
     //controler
@@ -53,13 +54,11 @@ ob_start();
                 if(isset($_POST['upload']) && ($_POST['upload'])){
                     $tenLoai=$_POST['tenloai'];
                     $id=$_POST['id'];
-                    upload_danhmuc($tenLoai,$id);   
-                    $thongBao = "Cập nhật thành công";
+                    upload_danhmuc($tenLoai,$id);
                 }
                 $listDanhMuc = list_danhmuc();
                 include "danhmuc/list.php";
                 break;
-
             /****************************************************************
              *                              SẢN PHẨM                        *
              ****************************************************************/
@@ -117,7 +116,7 @@ ob_start();
 
             // upload sản phẩm
             case 'upload_sp':
-                if(isset($_POST['upload2']) && ($_POST['upload2'])){
+                if(isset($_POST['upload']) && ($_POST['upload'])){
                     $id = $_POST['id'];
                     $nameSp = $_POST['namesp'];
                     $priceSp = $_POST['pricesp'];
@@ -138,8 +137,43 @@ ob_start();
             /****************************************************************
             *                              KHÁCH HÀNG                       *
             ****************************************************************/
+            case 'list_acc':
+                $listAcc = list_acc();
+                include "taikhoan/list.php";
+                break;
+            case 'update_acc':
+                $id = $_GET['id'];
+                if(isset($_GET['id']) && ($_GET['id'] > 0)){
+                    $updateAcc = update_acc($id);
+                }
+                include "taikhoan/update.php";
+                break;
+            case 'upload_acc':
+                if(isset($_POST['upload_acc'])&&($_POST['upload_acc'])){
+                    $id = $_POST['id'];
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $pass = $_POST['pass'];
+                    $address = $_POST['address'];
+                    $tele = $_POST['tele'];
+                    upload_acc($id,$name,$email,$pass,$address,$tele);
+                }
+                $listAcc = list_acc();
+                include "taikhoan/list.php";
+                break;
+            case 'delete_acc':
+                $id = $_GET['id'];
+                if(isset($_GET['id'])&&($_GET['id'])){
+                    delete_acc($id);
+                };
+                $listAcc = list_acc();
+                include "taikhoan/list.php";
+                break;
+            /****************************************************************
+            *                              bình luận                       *
+            ****************************************************************/
+
             
-            // bình luận
             default:
                 include "home.php";
                 break;

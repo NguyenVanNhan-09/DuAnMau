@@ -47,7 +47,7 @@
                                 </a>
                             </li>
                             <li class="sidebar__item">
-                                <a href="index.php?act=list_kh" class="sidebar__item-link">
+                                <a href="index.php?act=list_acc" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Khánh hàng</span>
                                 </a>

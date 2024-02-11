@@ -89,7 +89,7 @@
                                     if(isset($_SESSION['acc'])){
                                         $tk = $_SESSION['acc'];
                                 ?>
-                                    <a href="index.php?act=login" class="right__item-link">
+                                    <a class="right__item-link">
                                         <div class="right__item-content has-option">
                                             <div class="right__item-link-text">
                                                 <i class="right__item-icon ti-key"></i>
@@ -97,16 +97,18 @@
                                             </div>
                                             <ul class="right__item__select">
                                                 <li>
-                                                    <a href="index.php?act=update_acc&idtk=<?=$tk['id']?>" class="right__item__option">cập nhật tài khoản</a>
+                                                    <a href="index.php?act=update_acc" class="right__item__option">cập nhật tài khoản</a>
                                                 </li>
                                                 <li>
-                                                    <a href="index.php?act=forget" class="right__item__option">quên mật khẩu</a>
-                                                </li>
+                                                    <a href="index.php?act=forget_pass" class="right__item__option">quên mật khẩu</a>
+                                                </li>   
+                                                <?php if(($tk['roll'])==1){?>
+                                                    <li>
+                                                        <a href="admin/index.php" class="right__item__option">đăng nhập admin</a>
+                                                    </li>
+                                                <?php }?>
                                                 <li>
-                                                    <a href="admin/index.php" class="right__item__option">đăng nhập admin</a>
-                                                </li>
-                                                <li>
-                                                    <a href="index.php?act=exit" class="right__item__option">thoát</a>
+                                                    <a href="index.php?act=exit_acc" class="right__item__option">thoát</a>
                                                 </li>
                                             </ul>
                                         </div>

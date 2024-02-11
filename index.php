@@ -1,5 +1,6 @@
 <?php
     session_start();
+    ob_start();
     include "./model/pdo.php";
     include "./model/danhmuc.php";
     include "./model/sanpham.php";
@@ -60,6 +61,7 @@
                 add_acc($name, $email, $pass);
                 // $noti = "bạn đã đăng kí thành công vui lòng đăng nhập để mua hàng";
                 header("Location: index.php?act=login");
+                exit();
             }
             include "./view/taikhoan/register.php";
             break;
@@ -71,6 +73,7 @@
                 if(is_array($checkacc)){
                     $_SESSION['acc'] = $checkacc;
                     header("location: index.php");
+                    exit();
                 }else{
                     $noti = "tài khoản hoặc mật khẩu không đúng";
                 };
@@ -78,14 +81,35 @@
             include "./view/taikhoan/login.php";
             break;
         case 'update_acc':
-            $id = $_GET['idtk'];
-            if(isset($_GET['idtk']) && ($_GET['idtk'] > 0)){
-                $updateAcc = update_acc($id);
+            if(isset($_POST['upload_acc']) && $_POST['upload_acc']!=""){
+                $id=$_POST['id'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $pass = $_POST['pass'];
+                $address = $_POST['address'];
+                $tele = $_POST['tele'];
+                upload_acc($id,$name,$email,$pass,$address,$tele);
+                $_SESSION['acc']=check_acc($email,$pass);
+                header("location: index.php?act=update_acc");
+                exit(); // Stop further execution after redirect
             }
             include "./view/taikhoan/update_acc.php";
             break;
-        case 'upload_acc':
-            // ...
+        case 'forget_pass':
+            if(isset($_POST['forgetpass']) && $_POST['forgetpass']!=""){
+                $email = $_POST['email'];
+                $checkemail = check_email($email);
+                if(is_array($checkemail)){
+                    $noti = "Mật khẩu của bạn là ".$checkemail['pass'];
+                }else{
+                    $noti = "Email của bạn không tồn tại";
+                }
+            }
+            include './view/taikhoan/forget_pass.php';
+            break;
+        case 'exit_acc':
+            session_unset();
+            header("location: index.php");
             break;
         default:
             include "./view/home.php";
@@ -101,5 +125,5 @@
         include("./view/footer.php");
     }
 
-
+    // ob_end_flush();
 ?>

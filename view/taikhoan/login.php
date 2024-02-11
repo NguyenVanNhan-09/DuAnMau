@@ -30,8 +30,8 @@
                     <div class="form">
                         <div class="form__heading">Login</div>
                         <form action="index.php?act=login" method="post" class="form__input">
-                            <input type="text" placeholder="nhập name" name="email">
-                            <input type="text" placeholder="nhập password" name="pass">
+                            <input type="email" placeholder="nhập name" name="email">
+                            <input type="password" placeholder="nhập password" name="pass">
                             <div class="form__link">
                                 <span>bạn chưa có tài khoản? <a class="form__has-acc" href="index.php?act=register">đăng ký</a></span>
                                 <a class="form__forget" href="#">quên mật khẩu?</a>

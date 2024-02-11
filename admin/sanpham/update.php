@@ -1,10 +1,4 @@
-
-<?php 
-    if(is_array($updateSp)){
-        
-    }
-?>
-<?php 
+    <?php 
     $hinhPath = "../upload/".$updateSp['img'];
     $hinh = (is_file($hinhPath)) ? "<img src='".$hinhPath."' height='100' width='100'>" : "no image";
 ?>
@@ -38,7 +32,7 @@
                                 <!-- btn -->
                                 <div class="ctn__form-btn">
                                     <input type="hidden" name="id" value="<?php if(isset($updateSp['id']) && ($updateSp['id']>0)) echo $updateSp['id']; ?>">
-                                    <input class="btn" type="submit" name="upload2" value="Cập nhật">
+                                    <input class="btn" type="submit" name="upload" value="Cập nhật">
                                     <input class="btn" type="reset" name="submit" value="Nhập lại">
                                     <a href="index.php?act=list_sp"><input class="btn" type="button" name="submit" value="Danh sách"></a>
                                 </div>
