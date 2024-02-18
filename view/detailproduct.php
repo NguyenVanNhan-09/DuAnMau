@@ -23,7 +23,7 @@
                         </div>
                         <div class="product__info-price">
                             <div class="product__info-price-old">150.000</div>
-                            <div class="product__info-price-new"><?= $detailSp['price'] ?></div>
+                            <div class="product__info-price-new"><?=$detailSp['price']?> usđ</div>
                         </div>
                         <div class="product__info-shipping">
                             <div class="product__info-shipping-title">Vận chuyển</div>
@@ -73,14 +73,13 @@
                         <?= $detailSp['detail'] ?>
                     </div>
                 </div>
-
-                <div class="gird__row product__evaluate">
-                    <div class="product__evaluate-heading">Đánh giá sản phẩm</div>
-                    <form action="">
-                        <input class="product__evaluate-input" type="text">
-                        <button class="product__evaluate-btn">gửi</button>
-                    </form>
-                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        $("#comment").load("view/binhluan/form_comment.php", {idPro: <?= $detailSp['id'] ?>});
+                    });
+                </script>
+                <div id="comment"></div>
 
                 <div class="gird__row product__samekind">
                     <div class="product__samekind-heading">Sản phẩm cùng loại</div>
@@ -112,6 +111,5 @@
                     </div>
                     <a class="product__samekind-more" href="index.php?act=product&iddm=<?=$detailSp['id_dm']?>">xem thêm</a>
                 </div>
-
             </div>
         </div>

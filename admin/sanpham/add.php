@@ -7,7 +7,7 @@
                         <div class="ctn__form">
                             <form action="index.php?act=add_sp" method="post" enctype="multipart/form-data" class="ctn__form-add">
                                 <label for="">Tên sản phẩm</label>
-                                <input class="ctn__form-add-input" type="text" name="namesp" required>
+                                <input class="ctn__form-add-input" type="text" name="namesp" required autofocus>
                                 <label for="">Giá sản phẩm</label>
                                 <input class="ctn__form-add-input" type="text" name="pricesp" required>
                                 <label for="">Ảnh sản phẩm</label>
@@ -18,7 +18,7 @@
                                 <select name="iddm" class="form__select">
                                     <option value="0" disabled>Danh mục</option>
                                     <?php foreach($listDanhMuc as $danhMuc) : ?>
-                                        <option value="<?= $danhMuc['id']?>"> <?= $danhMuc['name']?></option>
+                                        <option value="<?= $danhMuc['id']?>"><?= $danhMuc['name']?></option>
                                     <?php endforeach?>
                                 </select>   
                                 <!-- btn -->

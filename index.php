@@ -125,5 +125,5 @@
         include("./view/footer.php");
     }
 
-    // ob_end_flush();
+    ob_end_flush();
 ?>

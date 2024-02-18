@@ -8,7 +8,7 @@
                                 <label for="">Mã loại</label>
                                 <input class="ctn__form-add-input" type="text" name="maloai" disabled placeholder="Auto">
                                 <label for="">Tên loại</label>
-                                <input class="ctn__form-add-input" type="text" name="tenloai" required>
+                                <input class="ctn__form-add-input" type="text" name="tenloai" required autofocus>
                                 <!-- btn -->
                                 <div class="ctn__form-btn">
                                     <input class="btn" type="submit" name="addnew" value="Thêm mới">

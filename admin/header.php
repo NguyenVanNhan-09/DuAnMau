@@ -35,13 +35,13 @@
                                 </a>
                             </li>
                             <li class="sidebar__item">
-                                <a href="index.php?act=add_dm" class="sidebar__item-link">
+                                <a href="index.php?act=list_dm" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Danh mục</span>
                                 </a>
                             </li>
                             <li class="sidebar__item">
-                                <a href="index.php?act=add_sp" class="sidebar__item-link">
+                                <a href="index.php?act=list_sp" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Hàng hoá</span>
                                 </a>
@@ -53,7 +53,7 @@
                                 </a>
                             </li>
                             <li class="sidebar__item">
-                                <a href="index.php?act=list_bl" class="sidebar__item-link">
+                                <a href="index.php?act=list_comment" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Bình luận</span>
                                 </a>
@@ -82,8 +82,8 @@
                     <div class="admin__header">
                             <div class="header__content">
                                 <div class="header__topic">Admin</div>
-                                <form action="" class="header__from-search">
-                                    <input type="text" class="header__search" placeholder="Nhập để tìm kiếm">
+                                <form action="#" method="post" class="header__from-search">
+                                    <input type="text" name="" class="header__search" placeholder="Nhập để tìm kiếm">
                                 </form>
                                 <div class="header__user">
                                     <a href="#" class="header__user-setting-link">

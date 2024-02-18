@@ -22,8 +22,8 @@
         return $updateAcc;
     };
     
-    function upload_acc($id,$name,$email,$pass,$address,$tele){
-        $sql="UPDATE taikhoan SET name='$name', email='$email', pass='$pass', address='$address', tele='$tele' where id=$id";
+    function upload_acc($id,$name,$email,$pass,$address,$tele,$roll){
+        $sql="UPDATE taikhoan SET name='$name', email='$email', pass='$pass', address='$address', tele='$tele', roll='$roll' where id=$id";
         pdo_execute($sql);
     };
 

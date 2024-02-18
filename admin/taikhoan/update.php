@@ -13,9 +13,14 @@
                                 <label for="">Mật khẩu</label>
                                 <input class="ctn__form-add-input" type="text" name="pass" value="<?= $updateAcc['pass']?>" required>
                                 <label for="">Địa chỉ</label>
-                                <input class="ctn__form-add-input" type="text" name="address" value="<?= $updateAcc['address']?>" required>
+                                <input class="ctn__form-add-input" type="text" name="address" value="<?= $updateAcc['address']?>" >
                                 <label for="">Số điện thoại</label>
-                                <input class="ctn__form-add-input" type="text" name="tele" value="<?= $updateAcc['tele']?>" required>
+                                <input class="ctn__form-add-input" type="text" name="tele" value="<?= $updateAcc['tele']?>" >
+                                <label>Quền hạn</label>
+                                <select name="roll" class="form__select">
+                                    <option value="0" <?php echo ($updateAcc['roll'] == 0) ? 'selected' : ''; ?>>Khách hàng</option>
+                                    <option value="1" <?php echo ($updateAcc['roll'] == 1) ? 'selected' : ''; ?>>Admin</option>
+                                </select>
                                 <!-- btn -->
                                 <div class="ctn__form-btn">
                                     <input type="hidden" name="id" value="<?php if(isset($updateAcc['id']) && $updateAcc['id'] > 0) echo $updateAcc['id']; ?>">

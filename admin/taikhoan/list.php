@@ -26,9 +26,15 @@
                                         <td><?=$acc['name']?></td>
                                         <td><?=$acc['email']?></td>
                                         <td><?=$acc['pass']?></td>
-                                        <td><?=$acc['address']?></td>
-                                        <td><?=$acc['tele']?></td>
-                                        <td><?=$acc['roll']?></td>
+                                        <td>
+                                            <?= $acc['address']=="" ? "<span style='color: red;'>Chưa cập nhật</span>" : $acc['address'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $acc['tele']=="" ? "<span style='color: red;'>Chưa cập nhật</span>" : $acc['tele'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $acc['roll']==0 ? "khách hàng" : "admin"?>
+                                        </td>
                                         <td class="btn-up-de">
                                             <a 
                                                 href="index.php?act=update_acc&id=<?= $acc['id']?>">

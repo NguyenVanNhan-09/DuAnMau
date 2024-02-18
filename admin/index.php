@@ -4,6 +4,7 @@ ob_start();
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
     include "../model/taikhoan.php";
+    include "../model/binhluan.php";
     include "header.php";
 
     //controler
@@ -101,6 +102,7 @@ ob_start();
                 if(isset($_GET['id']) && ($_GET['id'] > 0)) {
                     delete_sanpham($_GET['id']);
                 };
+                $listDanhMuc = list_danhmuc();
                 $listSanPham = list_sanpham("",0);
                 include "sanpham/list.php";
                 break;
@@ -156,7 +158,8 @@ ob_start();
                     $pass = $_POST['pass'];
                     $address = $_POST['address'];
                     $tele = $_POST['tele'];
-                    upload_acc($id,$name,$email,$pass,$address,$tele);
+                    $roll = $_POST['roll'];
+                    upload_acc($id,$name,$email,$pass,$address,$tele,$roll);
                 }
                 $listAcc = list_acc();
                 include "taikhoan/list.php";
@@ -172,8 +175,20 @@ ob_start();
             /****************************************************************
             *                              bình luận                       *
             ****************************************************************/
-
-            
+            case 'list_comment':
+                $idPro = 0;
+                $listComment = list_comment($idPro);
+                include "binhluan/list.php";
+                break;
+            case 'delete_comment':
+                $id = $_GET['id'];
+                if(isset($_GET['id']) && ($_GET['id']!="")){
+                    delete_comment($id);
+                }
+                $idPro = 0;
+                $listComment = list_comment($idPro);
+                include "binhluan/list.php";
+                break;
             default:
                 include "home.php";
                 break;

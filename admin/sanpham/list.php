@@ -36,7 +36,7 @@
                                     $updateSp = "index.php?act=update_sp&id=".$sanPham['id'];
                                     $deleteSp = "index.php?act=delete_sp&id=".$sanPham['id'];
                                     $hinhPath = "../upload/".$sanPham['img'];
-                                    $hinh = (is_file($hinhPath)) ? "<img src='".$hinhPath."' height='100'>" : "kh có ảnh";
+                                    $hinh = (is_file($hinhPath)) ? "<img src='".$hinhPath."' height='100' width='100'>" : "<span style='color: red;'>không có ảnh</span>";
                                     // <?php
                                     //     $hinhPath = "../upload/".$sanPham['img'];
                                     //     echo (is_file($hinhPath)) ? "<img src='".$hinhPath."' height='100'>" : "no image"; 
@@ -47,7 +47,7 @@
                                         <td><input type="checkbox"></td>
                                         <td><?php echo $sanPham['id']; ?></td>
                                         <td><?php echo $sanPham['name']; ?></td>
-                                        <td><?php echo $hinh;?></td>
+                                        <td style="height: 100px; width: 100px; background-size: cover; background-position: center;"><?php echo $hinh?></td>
                                         <td><?php echo $sanPham['price']; ?></td>
                                         <td><?php echo $sanPham['detail']; ?></td>
                                         <td><?php echo $sanPham['view']; ?></td>
