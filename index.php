@@ -20,7 +20,6 @@
     if(isset($_GET["act"]) && $_GET["act"] != ""){
     $act = $_GET['act'];
     switch ($act) {
-
         // Chi tiết sản phẩm
         case 'detail_product':
             $id = $_GET['id'];
@@ -111,6 +110,31 @@
             session_unset();
             header("location: index.php");
             break;
+        
+        // case 'add_to_cart':
+        //     if(isset($_POST['addtocart']) && $_POST['addtocart']!=""){
+        //         $id = $_POST['id'];
+        //         var_dump($id);
+        //     }
+        //     include "view/listcartorder.php";
+        //     break;
+            
+        case 'list_cart': 
+            // kiểm tra xem giỏ hàng có dữ liệu hay không 
+            if(!empty($_SESSION['cart'])){
+                $cart = $_SESSION['cart'];
+
+                // tạo mảng chứa id các sản phẩm trong giỏ hàng
+                $productId = array_column($cart, 'id');
+                // chuyển mảng thành chuỗi
+                $idList = implode(',', $productId);
+                // lấy sản phẩm tron bảng sản phầm theo id 
+                $dataDb = loadone_sanphamCart($idList);
+            }
+            include 'view/listcartorder.php';
+            break;
+
+
         default:
             include "./view/home.php";
             break;

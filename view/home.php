@@ -61,7 +61,7 @@
                 <div class="gird__row">
                     <?php foreach($listSanPhamUserFavorite as $spf) : ?>
                     <?php $img = $img_path.$spf['img']?>
-                    <div class="gird__col-2-4 product-item">
+                    <div class="gird__col-2-4 product__item">
                         <!-- favorite-product__item -->
                         <a href="index.php?act=detail_product&id=<?=$spf['id']?>" class="favorite-product__item">
                             <div class="favorite-product__item-img" style="background-image: url('<?=$img?>');"></div>
@@ -78,6 +78,18 @@
                                 </div>
                             </div>
                         </a>
+                        <div class="product__item-overlayL">
+                            <a class="cart__icon-link" href="#">
+                                <i class="cart__icon fa-solid fa-cart-plus"></i>
+                                <div class="text_icon">thêm vào giỏ hàng</div>
+                            </a>
+                        </div>
+                        <div class="product__item-overlayR">
+                            <a class="heart__icon-link" href="#">
+                                <i class="heart__icon fa-solid fa-heart"></i>
+                                <div class="text_icon">thêm vào yêu thích</div>
+                            </a>
+                        </div>
                     </div>
                     <?php endforeach;?> 
                 </div>
@@ -93,7 +105,7 @@
                 <div class="gird__row">
                     <?php foreach($listSanPhamUser as $sp) : ?>
                         <?php $img=$img_path.$sp['img'];?>
-                        <div class="gird__col-2-4 product-item">
+                        <div class="gird__col-2-4 product__item">
                             <!-- home-product__item -->
                             <a href="index.php?act=detail_product&id=<?=$sp['id']?>" class="home-product__item" >
                                 <div class="home-product__item-img" style="background-image: url('<?=$img?>');"></div>
@@ -110,6 +122,22 @@
                                     </div>
                                 </div>
                             </a>
+                            <div class="product__item-overlayL">
+                                    <button
+                                        data-id="<?=$sp['id']?>"
+                                        class="cart__icon-link" 
+                                        onclick="addToCart(<?=$sp['id']?>, '<?= $sp['name']?>', <?= $sp['price']?>)"
+                                    >
+                                        <div class="text_icon">Giỏ hàng</div>
+                                        <i class="cart__icon fa-solid fa-cart-plus"></i>
+                                    </button>
+                            </div>
+                            <div class="product__item-overlayR">
+                                <button class="heart__icon-link">
+                                    <i class="heart__icon fa-solid fa-heart"></i>
+                                    <div class="text_icon">Yêu thích</div> 
+                                </button>
+                            </div>
                         </div>
                     <?php endforeach;?>
                 </div>
@@ -146,3 +174,27 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    let totalProduct = document.getElementById('totalProduct');
+    function addToCart(productId,productName,productPrice){
+        console.log(productId, productName, productPrice),
+        // Sử dụng jquery + ajax
+        $.ajax({
+            type: 'POST',
+            url: './view/addtocart.php',
+            data: {
+                id: productId,
+                name: productName,
+                price: productPrice
+            },
+            success: function(response){
+                totalProduct.innerText = response;
+                alert('them san pham thanh cong');
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    }
+</script>

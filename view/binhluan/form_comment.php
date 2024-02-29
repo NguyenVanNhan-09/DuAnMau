@@ -23,11 +23,19 @@
                 <li class="product__evaluate-item"><?= $cm['noidung'] . ' - ' . $cm['id_user'] . ' - ' . $cm['ngaybinhluan']; ?></li>
             <?php endforeach;?>
         </ul>
-        <form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="product__evaluate-form">
-            <input type="hidden" name="idPro" value="<?=$idPro?>">
-            <input class="product__evaluate-input" type="text" name="textcomment">
-            <input type="submit" name="addcomment" class="product__evaluate-btn" value="Gửi">
-        </form>
+        <?php 
+            if(!isset($_SESSION['acc'])){
+                echo'
+                    <h2>Bạn cần đăng nhập để có thể bình luận</h2>  
+                ';
+            }else{
+        ?>
+            <form action="<?=$_SERVER['PHP_SELF']?>" method="post" class="product__evaluate-form">
+                <input type="hidden" name="idPro" value="<?=$idPro?>">
+                <input class="product__evaluate-input" type="text" name="textcomment">
+                <input type="submit" name="addcomment" class="product__evaluate-btn" value="Gửi">
+            </form>
+        <?php }?>
         <?php 
             ob_start();
             if(isset($_POST['addcomment']) && ($_POST['addcomment'])){

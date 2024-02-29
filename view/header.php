@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/style/main.css">
     <link rel="stylesheet" href="./assets/style/product.css">
     <link rel="stylesheet" href="./assets/style/login-out.css">
+    <link rel="stylesheet" href="./assets/style/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
@@ -97,6 +98,9 @@
                                             </div>
                                             <ul class="right__item__select">
                                                 <li>
+                                                    <a href="index.php?act=" class="right__item__option">Đơn hàng của tôi</a>
+                                                </li>
+                                                <li>
                                                     <a href="index.php?act=update_acc" class="right__item__option">cập nhật tài khoản</a>
                                                 </li>
                                                 <li>
@@ -110,6 +114,7 @@
                                                 <li>
                                                     <a href="index.php?act=exit_acc" class="right__item__option">thoát</a>
                                                 </li>
+                                                
                                             </ul>
                                         </div>
                                     </a>
@@ -228,6 +233,12 @@
                                 <input type="text" name="kyw" class="nav__search-input" placeholder="tìm kiếm sản phẩm">
                                 <i class="nav__search-input-icon ti-search"></i>
                             </form>
+                        </div>
+                        <div class="nav__cart">
+                            <a href="index.php?act=list_cart" class="nav__cart-link">
+                                <i class="nav__cart-icon ti-shopping-cart"></i>
+                            </a>
+                            <span id="totalProduct" class="nav__cart-quantity"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                         </div>
                     </div>
                 </div>

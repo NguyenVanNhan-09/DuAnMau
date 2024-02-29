@@ -133,6 +133,12 @@ body{
 .mb-15 {
     margin-bottom: 15px;
 }
+.mt-80 {
+    margin-top: 80px;
+}
+.mb-80 {
+    margin-bottom: 80px;
+}
 
 .mb-0{
     margin-bottom: 0;
