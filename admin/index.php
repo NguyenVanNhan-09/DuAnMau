@@ -5,7 +5,8 @@ ob_start();
     include "../model/sanpham.php";
     include "../model/taikhoan.php";
     include "../model/binhluan.php";
-    include "header.php";
+    include "../model/cart.php";
+    include "header.php";   
 
     //controler
     if(isset($_GET['act']) && $_GET['act'] != ""){
@@ -188,6 +189,49 @@ ob_start();
                 $idPro = 0;
                 $listComment = list_comment($idPro);
                 include "binhluan/list.php";
+                break;
+            /****************************************************************
+            *                              đơn hàng                         *
+            ****************************************************************/
+            case 'list_dh':
+                if(isset($_POST['keyword']) && $_POST['keyword'] != ""){
+                    $keyword = $_POST['keyword'];
+                }else{
+                    $keyword = "";
+                }
+                $listBill =loadall_bill($keyword,0);
+                include "order/list.php";
+                break;
+            case 'delete_bill':
+                $id = $_GET['id'];
+                if(isset($_GET['id']) && $_GET['id']!=""){
+                    delete_bill($id);
+                }
+                $listBill =loadall_bill(0);
+                include "order/list.php";
+                break;
+            case 'update_bill':
+                if (isset($_GET['id']) & $_GET['id'] > 0) {
+                    $onebill = loadone_bill($_GET['id']);
+                }
+                if (isset($_POST['update_bill'])) {
+                    $status = $_POST['status'];
+                    $id = $_POST['id'];
+                    update_bill($id, $status);
+                    header("location: index.php?act=list_dh");
+                }
+                include "order/edit.php";
+                break;
+            /****************************************************************
+            *                             Thống kê                          *
+            ****************************************************************/
+            case 'list_tk':
+                $listTk = loadall_tk();
+                include "thongke/list.php";
+                break;
+            case 'list_bd':
+                $listTk = loadall_tk();
+                include "thongke/bieudo.php";
                 break;
             default:
                 include "home.php";

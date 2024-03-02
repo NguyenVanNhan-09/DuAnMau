@@ -21,7 +21,7 @@
 <div class="gird">
     <div class="cart">
         <div class="gird__row cart__content" id="order">
-            <div class="cart-l">
+            <div class="width-full">
                 <a href="#" class="cart-l__heading-link">
                     <div class="cart-l__heading">
                         <i class="cart-l__heading-icon ti-angle-left"></i>
@@ -71,62 +71,8 @@
                         endforeach;?>
                 </ul>
             </div>
-            <?php 
-                if(isset($_SESSION['acc'])){
-                    $name = $_SESSION['acc']['name'];
-                    $address = $_SESSION['acc']['address'];
-                    $email = $_SESSION['acc']['email'];
-                    $tele = $_SESSION['acc']['tele'];
-                }else{
-                    $name  = "";
-                    $address = "";
-                    $email = "";
-                    $tele  = "";
-                }
-            ?>
-            <div class="cart-r">
-                <div class="cart-r__content">
-                    <div class="cart-r__content-heading">Thanh toán</div>
-                    <div class="cart-r__content-card">
-                        <div class="cart-r__content-card-heading">Loại thẻ</div>
-                        <div class="cart-r__content-card-list">
-                            <img src="./assets/img/card1.png" class="cart-r__content-card-img"></img>
-                            <img src="./assets/img/card2.png" class="cart-r__content-card-img"></img>
-                            <img src="./assets/img/card3.png" class="cart-r__content-card-img"></img>
-                            <img src="./assets/img/card.png" class="cart-r__content-card-img"></img>
-                        </div>
-                    </div>
-                    <div class="cart-r__content-name">
-                        <div class="cart-r__content-name-heading">Tên</div>
-                        <input class="cart-r__content-input" type="text" value="<?=$name?>">
-                    </div>
-                    <div class="cart-r__content-number">
-                        <div class="cart-r__content-number-heading">Số điện thoại</div>
-                        <input class="cart-r__content-input" type="text" placeholder="Số điện thoại...">
-                    </div>
-                    <div class="cart-r__content-address">
-                        <div class="cart-r__content-address-heading">Địa chỉ</div>
-                        <input class="cart-r__content-input" type="text" placeholder="Địa chỉ...">  
-                    </div>
-                    <div class="cart-r__content-info">
-                        <div class="cart-r__content-info-sum">
-                            <div class="info-text">Tổng tiền hàng</div>
-                            <div class="info-price"><?= number_format((int)$sum_total,0,",",".")?></div>
-                        </div>
-                        <div class="cart-r__content-info-transport">
-                            <div class="info-text">Tổng tiền hàng</div>
-                            <div class="info-price"></div>  
-                        </div>
-                        <div class="cart-r__content-info-total">
-                            <div class="info-text">Tổng tiền hàng</div>
-                            <div class="info-price">397.500đ</div>
-                        </div>
-                    </div>
-                    <div class="cart-r__content-btn">
-                        <button type="submit">Buy</button>
-                    </div>
-                </div>
-            </div>
+            <h1>Tổng : <span><?= number_format($sum_total,0,",",".")?></span></h1>
+            <a href="index.php?act=bill"><button class="button-40" role="button">Đặt hàng</button></a>
         </div>
     </div>
 </div>
@@ -144,14 +90,14 @@
         // gửi yêu cầu bằng ajax để cập nhật giỏ hàng
         $.ajax({
             type: 'POST',
-            url: './view/updatequantity.php',
+            url: './view/cart/updatequantity.php',
             data: {
                 id: id,
                 quantity: newQuantity
             },
             success: function(response){
                 // sau khi cập nhật thành công 
-                $.post('view/tablecartorder.php', function(data){
+                $.post('view/cart/tablecartorder.php', function(data){
                     $('#order').html(data);
                 })
             },
@@ -165,13 +111,13 @@
             // gửi yêu cầu bằng ajax để cập nhật giỏ hàng
             $.ajax({
                 type: 'POST',
-                url: './view/removeFromCart.php',
+                url: './view/cart/removeFromCart.php',
                 data: {
                     id: id,
                 },
                 success: function(response){
                     // sau khi cập nhật thành công 
-                    $.post('view/tablecartorder.php', function(data){
+                    $.post('view/cart/tablecartorder.php', function(data){
                         $('#order').html(data);
                     })
                 },

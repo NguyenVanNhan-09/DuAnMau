@@ -11,7 +11,7 @@
        $productId = $_POST['id'];
        $productName = $_POST['name'];
        $productPrice = $_POST['price'];
-   
+    
        // Kiểm tra xem giỏ hàng đã được khởi tạo chưa (có thể không cần thiết nếu đã đảm bảo trước)
        if (!isset($_SESSION['cart'])) {
            $_SESSION['cart'] = array(); // Nếu không, khởi tạo giỏ hàng là một mảng trống

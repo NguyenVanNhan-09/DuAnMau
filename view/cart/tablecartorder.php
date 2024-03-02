@@ -1,10 +1,10 @@
 <?php 
     session_start();
-    include "../model/pdo.php";
-    include "../model/sanpham.php";
-    include "../model/taikhoan.php";
-    include "../model/danhmuc.php";
-    include "../assets/globals.php";
+    include "../../model/pdo.php";
+    include "../../model/sanpham.php";
+    include "../../model/taikhoan.php";
+    include "../../model/danhmuc.php";
+    include "../../assets/globals.php";
 
     // kiểm tra xem giỏ hàng có dữ liệu hay không 
     if(!empty($_SESSION['cart'])){
@@ -21,7 +21,7 @@
 
         // Hiển thị thông tin giỏ hàng ở đây
 ?>
-        <div class="cart-l">
+        <div class="width-full">
             <a href="#" class="cart-l__heading-link">
                 <div class="cart-l__heading">
                     <i class="cart-l__heading-icon ti-angle-left"></i>
@@ -71,54 +71,8 @@
 ?>
             </ul>
         </div>
-<?php
-        // Tính tổng số tiền hàng ở đây
-
-        // Hiển thị thông tin thanh toán
-?>
-        <div class="cart-r">
-            <div class="cart-r__content">
-                <div class="cart-r__content-heading">Thanh toán</div>
-                <div class="cart-r__content-card">
-                    <div class="cart-r__content-card-heading">Loại thẻ</div>
-                    <div class="cart-r__content-card-list">
-                        <img src="./assets/img/card1.png" class="cart-r__content-card-img"></img>
-                        <img src="./assets/img/card2.png" class="cart-r__content-card-img"></img>
-                        <img src="./assets/img/card3.png" class="cart-r__content-card-img"></img>
-                        <img src="./assets/img/card.png" class="cart-r__content-card-img"></img>
-                    </div>
-                </div>
-                <div class="cart-r__content-name">
-                    <div class="cart-r__content-name-heading">Tên</div>
-                    <input class="cart-r__content-input" type="text" placeholder="tên...">
-                </div>
-                <div class="cart-r__content-number">
-                    <div class="cart-r__content-number-heading">Số điện thoại</div>
-                    <input class="cart-r__content-input" type="text" placeholder="Số điện thoại...">
-                </div>
-                <div class="cart-r__content-address">
-                    <div class="cart-r__content-address-heading">Địa chỉ</div>
-                    <input class="cart-r__content-input" type="text" placeholder="Địa chỉ...">  
-                </div>
-                <div class="cart-r__content-info">
-                    <div class="cart-r__content-info-sum">
-                        <div class="info-text">Tổng tiền hàng</div>
-                        <div class="info-price"><?= number_format((int)$sum_total,0,",",".")?></div>
-                    </div>
-                    <div class="cart-r__content-info-transport">
-                        <div class="info-text">Tổng tiền hàng</div>
-                        <div class="info-price"></div>  
-                    </div>
-                    <div class="cart-r__content-info-total">
-                        <div class="info-text">Tổng tiền hàng</div>
-                        <div class="info-price">397.500đ</div>
-                    </div>
-                </div>
-                <div class="cart-r__content-btn">
-                    <button type="submit">Buy</button>
-                </div>
-            </div>
-        </div>
+        <h1>Tổng : <span><?= number_format($sum_total,0,",",".")?></span></h1>
+        <a href="index.php?act=bill"><button class="button-40" role="button">Đặt hàng</button></a>
 <?php
     }
 ?>

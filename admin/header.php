@@ -59,6 +59,12 @@
                                 </a>
                             </li>
                             <li class="sidebar__item">
+                                <a href="index.php?act=list_dh" class="sidebar__item-link">
+                                    <span class="sidebar__item-icon ti-home"></span>
+                                    <span class="sidebar__item-text">Đơn hàng</span>
+                                </a>
+                            </li>
+                            <li class="sidebar__item">
                                 <a href="index.php?act=list_tk" class="sidebar__item-link">
                                     <span class="sidebar__item-icon ti-home"></span>
                                     <span class="sidebar__item-text">Thống kê</span>
@@ -66,7 +72,7 @@
                             </li>
                             <div class="sidebar__bottom">
                                 <li class="sidebar__item">
-                                    <a href="../../DuAnMau/" class="sidebar__item-link">
+                                    <a href="../../DuAnMau_backup/" class="sidebar__item-link">
                                         <span class="sidebar__item-icon ti-home"></span>
                                         <span class="sidebar__item-text">Người dùng</span>
                                     </a>

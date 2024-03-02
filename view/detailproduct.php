@@ -52,10 +52,20 @@
                         </div>
                         <div class="product__info-btn">
                             <div class="product__info-btn-buy">
-                                <button>mua ngay</button>
+                                <a  
+                                    class="product__info-btn-link"
+                                    href="index.php?act=bill" 
+                                    data-id="<?=$detailSp['id']?>"
+                                    onclick="buyProduct(<?=$detailSp['id']?>, '<?= $detailSp['name']?>', <?= $detailSp['price']?>)"
+                                >
+                                mua ngay
+                                </a>
                             </div>
                             <div class="product__info-btn-cw">
-                                <button class="product__info-btn-cart">
+                                <button 
+                                    data-id="<?=$sp['id']?>"
+                                    onclick="addToCart(<?=$detailSp['id']?>, '<?= $detailSp['name']?>', <?= $detailSp['price']?>)"
+                                    class="product__info-btn-cart">
                                     <i class="product__info-btn-cart-icon ti-shopping-cart"></i>
                                     thêm vào giỏ hàng
                                 </button>
@@ -113,3 +123,45 @@
                 </div>
             </div>
         </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    let totalProduct = document.getElementById('totalProduct');
+    function addToCart(productId,productName,productPrice){
+        // Sử dụng jquery + ajax
+        $.ajax({
+            type: 'POST',
+            url: './view/cart/addtocart.php',
+            data: {
+                id: productId,
+                name: productName,
+                price: productPrice
+            },
+            success: function(response){
+                totalProduct.innerText = response;
+                alert('them san pham thanh cong');
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    }
+    function buyProduct(productId,productName,productPrice){
+        // Sử dụng jquery + ajax
+        $.ajax({
+            type: 'POST',
+            url: './view/cart/addtocart.php',
+            data: {
+                id: productId,
+                name: productName,
+                price: productPrice
+            },
+            // success: function(response){
+            //     totalProduct.innerText = response;
+            //     alert('them san pham thanh cong');
+            // },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    }
+</script>

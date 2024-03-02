@@ -79,16 +79,20 @@
                             </div>
                         </a>
                         <div class="product__item-overlayL">
-                            <a class="cart__icon-link" href="#">
-                                <i class="cart__icon fa-solid fa-cart-plus"></i>
-                                <div class="text_icon">thêm vào giỏ hàng</div>
-                            </a>
+                                <button
+                                    data-id="<?=$spf['id']?>"
+                                    class="cart__icon-link" 
+                                    onclick="addToCart(<?=$spf['id']?>, '<?= $spf['name']?>', <?= $spf['price']?>)"
+                                >
+                                    <div class="text_icon">Giỏ hàng</div>
+                                    <i class="cart__icon fa-solid fa-cart-plus"></i>
+                                </button>
                         </div>
                         <div class="product__item-overlayR">
-                            <a class="heart__icon-link" href="#">
+                            <button class="heart__icon-link">
                                 <i class="heart__icon fa-solid fa-heart"></i>
-                                <div class="text_icon">thêm vào yêu thích</div>
-                            </a>
+                                <div class="text_icon">Yêu thích</div> 
+                            </button>
                         </div>
                     </div>
                     <?php endforeach;?> 
@@ -178,11 +182,10 @@
 <script>
     let totalProduct = document.getElementById('totalProduct');
     function addToCart(productId,productName,productPrice){
-        console.log(productId, productName, productPrice),
         // Sử dụng jquery + ajax
         $.ajax({
             type: 'POST',
-            url: './view/addtocart.php',
+            url: './view/cart/addtocart.php',
             data: {
                 id: productId,
                 name: productName,

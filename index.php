@@ -5,6 +5,7 @@
     include "./model/danhmuc.php";
     include "./model/sanpham.php";
     include "./model/taikhoan.php";
+    include "./model/cart.php";
     include "./assets/globals.php";
 
     $listDanhMucUser = list_danhmuc();
@@ -105,20 +106,12 @@
                 }
             }
             include './view/taikhoan/forget_pass.php';
-            break;
+            break;  
         case 'exit_acc':
             session_unset();
             header("location: index.php");
             break;
-        
-        // case 'add_to_cart':
-        //     if(isset($_POST['addtocart']) && $_POST['addtocart']!=""){
-        //         $id = $_POST['id'];
-        //         var_dump($id);
-        //     }
-        //     include "view/listcartorder.php";
-        //     break;
-            
+        // cart
         case 'list_cart': 
             // kiểm tra xem giỏ hàng có dữ liệu hay không 
             if(!empty($_SESSION['cart'])){
@@ -131,14 +124,59 @@
                 // lấy sản phẩm tron bảng sản phầm theo id 
                 $dataDb = loadone_sanphamCart($idList);
             }
-            include 'view/listcartorder.php';
+            include 'view/cart/listcartorder.php';
             break;
-
-
+        case 'bill': 
+            
+            // kiểm tra xem giỏ hàng có dữ liệu hay không 
+            if(!empty($_SESSION['cart'])){
+                $cart = $_SESSION['cart'];
+                // var_dump($_SESSION['img']);
+                // tạo mảng chứa id các sản phẩm trong giỏ hàng
+                $productId = array_column($cart, 'id');
+                // chuyển mảng thành chuỗi
+                $idList = implode(',', $productId);
+                // lấy sản phẩm tron bảng sản phầm theo id 
+                $dataDb = loadone_sanphamCart($idList);
+            }
+            include 'view/bill.php';
+            break;
+        case 'bill_confirm':
+            if (isset($_POST['billconfirm'])) {
+                if(isset($_SESSION['acc'])) $idUser = $_SESSION['acc']['id'];
+                else $id = 0;
+                $name = $_POST['name'];
+                $tele = $_POST['tele'];
+                $address = $_POST['address'];
+                $orderDate = date('Y-m-d H:i:s');
+                $sumTotal = $_POST['sum_total'];
+                // Kiểm tra xem ô radio "paymethod" đã được chọn hay chưa
+                if(isset($_POST['paymethod'])) {
+                    // Lấy giá trị của ô radio "paymethod"
+                    $payMethod = $_POST['paymethod'];
+                    // Tiếp tục xử lý dữ liệu
+                    $idbill = add_bill($name,$tele,$address,$orderDate,$sumTotal,$payMethod,$idUser);
+                    foreach($_SESSION['cart'] as $cart){
+                        add_cart($_SESSION['acc']['id'],$cart['name'],$cart['price'],$cart['quantity'],$_SESSION['resultTotal'],$idbill);
+                    }
+                } else {
+                    // Xử lý trường hợp không có phương thức thanh toán được chọn
+                    // Ví dụ: Hiển thị thông báo lỗi
+                    echo "Vui lòng chọn phương thức thanh toán";
+                }   
+                $_SESSION['cart'] = [];
+            }
+            $bill = loadone_bill($idbill);
+            include 'view/cartUser.php';
+            break;
+        case 'my_bill':
+            $listBill = loadall_bill($_SESSION['acc']['id']);
+            include "view/mybill.php";
+            break;
         default:
             include "./view/home.php";
             break;
-    } 
+        }
 
     }else{
         include "./view/home.php";

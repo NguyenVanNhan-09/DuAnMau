@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/style/product.css">
     <link rel="stylesheet" href="./assets/style/login-out.css">
     <link rel="stylesheet" href="./assets/style/cart.css">
+    <link rel="stylesheet" href="./assets/style/admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
 
         <!-- header -->
         <header class="header">
-            <div class="topheader">
+            <div class="topheader flex align-center">
                 <div class="gird__full-width">
                     <div class="topheader-content gird">
                         <div class="topheader__left">
@@ -79,17 +80,19 @@
                                     <div class="right__item-text">Danh sách yêu thích</div>
                                 </a>
                             </li>
-                            <li class="right__item">
-                                <a href="../../DuAnMau/admin" class="right__item-link">
-                                    <i class="right__item-icon ti-check-box"></i>
-                                    <div class="right__item-text">Quyền hạn</div>
-                                </a>
-                            </li>
-                            <li class="right__item">
-                                <?php 
+                            <?php 
                                     if(isset($_SESSION['acc'])){
                                         $tk = $_SESSION['acc'];
                                 ?>
+                            <?php if(($tk['roll'])==1){?>
+                                <li class="right__item">
+                                    <a href="admin/index.php" class="right__item-link">
+                                        <i class="right__item-icon ti-check-box"></i>
+                                        <div class="right__item-text">Quyền hạn</div>
+                                    </a>
+                                </li>
+                            <?php }?>
+                            <li class="right__item">
                                     <a class="right__item-link">
                                         <div class="right__item-content has-option">
                                             <div class="right__item-link-text">
@@ -98,7 +101,7 @@
                                             </div>
                                             <ul class="right__item__select">
                                                 <li>
-                                                    <a href="index.php?act=" class="right__item__option">Đơn hàng của tôi</a>
+                                                    <a href="index.php?act=my_bill" class="right__item__option">Đơn hàng của tôi</a>
                                                 </li>
                                                 <li>
                                                     <a href="index.php?act=update_acc" class="right__item__option">cập nhật tài khoản</a>
