@@ -19,4 +19,14 @@
         $sql = "DELETE FROM binhluan WHERE id=$id";
         pdo_execute($sql);
     };
+    function load_name_user($id){
+        if($idDm > 0){
+            $sql = "SELECT * FROM taikhoan where id=$id";
+            $acc = pdo_query_one($sql);
+            extract($acc);
+            return $name;
+        }else{
+            return "";
+        }
+    }
 ?>

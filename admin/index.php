@@ -6,6 +6,7 @@ ob_start();
     include "../model/taikhoan.php";
     include "../model/binhluan.php";
     include "../model/cart.php";
+    include "../model/sach.php";
     include "header.php";   
 
     //controler
@@ -232,6 +233,63 @@ ob_start();
             case 'list_bd':
                 $listTk = loadall_tk();
                 include "thongke/bieudo.php";
+                break;
+            /****************************************************************
+            *                            sách                         *
+            ****************************************************************/
+            case 'list_sach':
+                $listSach = list_sach();
+                include "sach/list.php";
+                break;
+            case 'add_sach':
+                if(isset($_POST['addnew']) && ($_POST['addnew'])){
+                    $tensach = $_POST['tensach'];
+                    $gia = $_POST['gia'];
+                    $mota = $_POST['mota'];
+                    $idNxb = $_POST['id_nxb'];
+                    $hinhanh = $_FILES['hinhanh']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES['hinhanh']['name']);
+                    move_uploaded_file($_FILES['hinhanh']['tmp_name'], $target_file);
+                    add_sach($tensach, $gia, $mota, $hinhanh, $idNxb);
+                    header("location: index.php?act=list_sach");
+                    exit();
+                }
+                $listNxb = list_nhaxuatban();
+                include "sach/add.php";
+                break;
+            case 'delete_sach':
+                $id = $_GET['id'];
+                if(isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_sach($id);
+                };
+                $listSach = list_sach();
+                include "sach/list.php";
+                break;
+            case 'update_sach':
+                $id = $_GET['id'];
+                if(isset($_GET['id']) && ($_GET['id'] > 0)){
+                    $updateSach = update_sach($id);
+                };
+                $listNxb = list_nhaxuatban();
+                include "sach/update.php";
+                break;
+            case 'upload_sach':
+                if(isset($_POST['upload']) && ($_POST['upload'])){
+                    $id = $_POST['id'];
+                    $tensach = $_POST['tensach'];
+                    $gia = $_POST['gia'];
+                    $mota = $_POST['mota'];
+                    $idNxb = $_POST['id_nxb'];
+                    $hinhanh = $_FILES['hinhanh']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES['hinhanh']['name']);
+                    move_uploaded_file($_FILES['hinhanh']['tmp_name'], $target_file);
+                    // upload lên
+                    upload_sach($id, $tensach, $gia, $mota, $hinhanh, $idNxb);
+                };
+                $listSach = list_sach();
+                include "sach/list.php";
                 break;
             default:
                 include "home.php";

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./assets/style/product.css">
     <link rel="stylesheet" href="./assets/style/login-out.css">
     <link rel="stylesheet" href="./assets/style/cart.css">
-    <link rel="stylesheet" href="./assets/style/admin.css">
+    <!-- <link rel="stylesheet" href="./assets/style/admin.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
@@ -144,7 +144,7 @@
                         <div class="gird__col-3">
                             <div class="centerheader__logo">
                                 <a href="index.php" class="centerheader__logo-link">
-                                    <img class="centerheader__logo-img" src="./assets/img/logo_X-shop.png" alt="logo">
+                                    <img class="centerheader__logo-img" src="./assets/img/-Shop.png" alt="logo">
                                 </a>
                             </div>
                         </div>

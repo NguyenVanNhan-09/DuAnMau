@@ -1,8 +1,8 @@
 <!-- content -->
-<div class="gird">
+<div class="gird mt-80 mb-80">  
     <div class="admin__ctn" style="overflow:auto;">
                         <div class="gird__row-admin ctn__content">
-                            <h1 class="ctn__heading">Danh sách loại hàng</h1>
+                            <h1 class="ctn__heading">Đơn hàng của bạn</h1>
 
                             <!-- table list -->
                             <table class="table__list">

@@ -70,6 +70,12 @@
                                     <span class="sidebar__item-text">Thống kê</span>
                                 </a>
                             </li>
+                            <li class="sidebar__item">
+                                <a href="index.php?act=list_sach" class="sidebar__item-link">
+                                    <span class="sidebar__item-icon ti-home"></span>
+                                    <span class="sidebar__item-text">Sách</span>
+                                </a>
+                            </li>
                             <div class="sidebar__bottom">
                                 <li class="sidebar__item">
                                     <a href="../../DuAnMau_backup/" class="sidebar__item-link">

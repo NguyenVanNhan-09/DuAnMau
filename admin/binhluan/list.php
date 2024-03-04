@@ -9,7 +9,6 @@
                                 <tr>
                                     <th></th>
                                     <th>Mã</th>
-                                    <th>Tên</th>
                                     <th>Sản phẩm</th>
                                     <th>nội dung</th>
                                     <th>chức năng</th>
@@ -20,7 +19,6 @@
                                     <tr>
                                         <td><input type="checkbox"></td>
                                         <td><?=$cm['id']?></td>
-                                        <td><?=$cm['id_user']?></td>
                                         <td><?=$cm['id_pro']?></td>
                                         <td><?=$cm['noidung']?></td>
                                         <td class="btn-up-de">

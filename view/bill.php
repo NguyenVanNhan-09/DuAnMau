@@ -99,15 +99,15 @@
                         ?>
                         <div class="cart-r__content-name">
                             <div class="cart-r__content-name-heading">Tên</div>
-                            <input class="cart-r__content-input" name="name" type="text" value="<?= $name?>">
+                            <input class="cart-r__content-input" id="name" name="name" type="text" value="<?= $name?>">
                         </div>
                         <div class="cart-r__content-number">
                             <div class="cart-r__content-number-heading">Số điện thoại</div>
-                            <input class="cart-r__content-input" name="tele" type="text" value="<?= $tele?>">
+                            <input class="cart-r__content-input" id="tele" name="tele" type="text" value="<?= $tele?>">
                         </div>
                         <div class="cart-r__content-address">
                             <div class="cart-r__content-address-heading">Địa chỉ</div>
-                            <input class="cart-r__content-input" name="address" type="text" value="<?= $address?>">  
+                            <input class="cart-r__content-input" id="address" name="address" type="text" value="<?= $address?>">  
                         </div>
                         <div>
                             <div class="cart-r__content-address-heading">Phương thức thanh toán</div>
@@ -132,13 +132,42 @@
                         </div>
                         <div class="cart-r__content-btn">
                             <input type="hidden" name="sum_total" value="<?= $sum_total ?>">
-                            <button type="submit" name="billconfirm">Buy</button>
+                            <button onclick="return kiemtraform()" type="submit" name="billconfirm">Buy</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
+        <script>
+        //Validate thông báo chưa nhập
+        function kiemtraform() {
+            var name = document.getElementById("name");
+            if (name.value == "") {
+                alert("Vui lòng nhập tên!");
+                name.focus();
+                return false;
+            }
+            var address = document.getElementById("address");
+            if (address.value == "") {
+                alert("Vui lòng nhập địa chỉ!");
+                address.focus();
+                return false;
+            }
+            var tele = document.getElementById("tele");
+            if (tele.value == "") {
+                alert("Vui lòng nhập sdt!");
+                tele.focus();
+                return false;
+            }
+            var confirmPayment = confirm("Xác nhận thanh toán?");
+            if (confirmPayment) {
+                return true; // Nếu người dùng chấp nhận, tiếp tục thanh toán
+            } else {
+                return false; // Nếu người dùng không chấp nhận, không thanh toán
+            }
+        }
+    </script>
 </div>
 <?php 
     } else {

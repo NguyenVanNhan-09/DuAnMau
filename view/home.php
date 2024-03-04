@@ -109,7 +109,7 @@
                 <div class="gird__row">
                     <?php foreach($listSanPhamUser as $sp) : ?>
                         <?php $img=$img_path.$sp['img'];?>
-                        <div class="gird__col-2-4 product__item">
+                        <div class="gird__col-2-4 product__item pb-10">
                             <!-- home-product__item -->
                             <a href="index.php?act=detail_product&id=<?=$sp['id']?>" class="home-product__item" >
                                 <div class="home-product__item-img" style="background-image: url('<?=$img?>');"></div>
@@ -151,27 +151,27 @@
             <div class="gird__row">
                 <div class="gird__col-2-4">
                     <div class="brand__item">
-                        <div class="brand__item-img" style="background-image: url(https://icheck.com.vn/wp-content/uploads/2022/09/lich-su-thuong-hieu-dong-ho-rolex-.jpg);"></div>
+                        <div class="brand__item-img" style="background-image: url(https://lh6.googleusercontent.com/yydj-C66k_K1bRs6cKW2LWecPIp9O_XqOoyIl8HvpJPgiV_38cWadVs67cRwtQpAZ-jgMcs3NMJLEqCDHD3CepoIRCUuFo_REqHJUrlBCNOpZ1K8pWmqnso-v6g-9BfL8tA8ogRD=s0);"></div>
                     </div>
                 </div>
                 <div class="gird__col-2-4">
                     <div class="brand__item">
-                        <div class="brand__item-img" style="background-image: url(https://icheck.com.vn/wp-content/uploads/2022/09/lich-su-thuong-hieu-dong-ho-rolex-.jpg);"></div>
+                        <div class="brand__item-img" style="background-image: url(https://ttagencyads.com/wp-content/uploads/2021/04/10-mau-logo-thuong-hieu-2.png);"></div>
                     </div>
                 </div>
                 <div class="gird__col-2-4">
                     <div class="brand__item">
-                        <div class="brand__item-img" style="background-image: url(https://icheck.com.vn/wp-content/uploads/2022/09/lich-su-thuong-hieu-dong-ho-rolex-.jpg);"></div>
+                        <div class="brand__item-img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuPhAQ989oDK2UbyujQA0JkoJmvRuH0Ni8Sw&usqp=CAU);"></div>
                     </div>
                 </div>
                 <div class="gird__col-2-4">
                     <div class="brand__item">
-                        <div class="brand__item-img" style="background-image: url(https://icheck.com.vn/wp-content/uploads/2022/09/lich-su-thuong-hieu-dong-ho-rolex-.jpg);"></div>
+                        <div class="brand__item-img" style="background-image: url(https://censor.vn/wp-content/uploads/2022/02/cac-hang-giay-noi-tieng-17.jpg);"></div>
                     </div>
                 </div>
                 <div class="gird__col-2-4">
                     <div class="brand__item">
-                        <div class="brand__item-img" style="background-image: url(https://icheck.com.vn/wp-content/uploads/2022/09/lich-su-thuong-hieu-dong-ho-rolex-.jpg);"></div>
+                        <div class="brand__item-img" style="background-image: url(https://censor.vn/wp-content/uploads/2022/03/logo-cac-hang-giay-noi-tieng-6.png);"></div>
                     </div>
                 </div>
             </div>

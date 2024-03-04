@@ -170,7 +170,7 @@
             include 'view/cartUser.php';
             break;
         case 'my_bill':
-            $listBill = loadall_bill($_SESSION['acc']['id']);
+            $listBill = loadall_bill($keyword="",$_SESSION['acc']['id']);
             include "view/mybill.php";
             break;
         default:

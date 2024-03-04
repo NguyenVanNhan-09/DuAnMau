@@ -246,7 +246,7 @@
 }
 
 .centerheader__widget-item:hover .centerheader__widget-item-icon {
-    background-color: #e34444;
+    background-color: #5271FF;
     color: var(--white-color);
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -723,7 +723,7 @@
 
 .brand__item-img {
     padding-top: 106px;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
